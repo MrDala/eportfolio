@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Nunito Sans';
+  src: url('../../ressources/fonts/Nunito_Sans/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf');
+}
+
+h3 {
+  font-family: 'Nunito Sans';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
