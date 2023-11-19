@@ -1,0 +1,13 @@
+img {
+  width: 30px;
+  height: 30px;
+}
+
+img:hover {
+  cursor: pointer;
+  filter: invert(53%) sepia(77%) saturate(330%) hue-rotate(150deg) brightness(96%) contrast(84%);
+}
+
+img:active {
+  transform: translateY(1px);
+}
