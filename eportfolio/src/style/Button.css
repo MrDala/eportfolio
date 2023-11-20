@@ -54,7 +54,7 @@ button:active {
   transform: translateY(1px);
 }
 
-button.big {
+button.xl {
   min-width: 200px;
   min-height: 42px;
   font-size: 14px;

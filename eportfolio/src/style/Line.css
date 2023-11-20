@@ -1,0 +1,17 @@
+.line {
+  border: solid 1px;
+  width: 80%;
+  margin: 10px auto;
+}
+
+.line.color {
+  border-color: #BA324F;
+}
+
+.dotted {
+  height: 10px;
+  border: none;
+  background-image: linear-gradient(to right, #000 15%, rgba(255, 255, 255, 0) 0%);
+  background-size: 10px 1.5px;
+  background-repeat: repeat-x;
+}
