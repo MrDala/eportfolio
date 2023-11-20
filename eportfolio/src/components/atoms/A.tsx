@@ -1,7 +1,7 @@
 import '../../style/A.css';
 
 type Props = {
-  children: JSX.Element,
+  children: string,
   href: string
 };
 

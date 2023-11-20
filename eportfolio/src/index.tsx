@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+
 import H1 from './components/atoms/H1';
 import H2 from './components/atoms/H2';
 import H3 from './components/atoms/H3';
@@ -10,6 +11,8 @@ import IconButton from './components/atoms/IconButton';
 import A from './components/atoms/A';
 import Picture from './components/atoms/Picture';
 import Line from './components/atoms/Line';
+
+import "./style/Style.css";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -42,7 +45,7 @@ root.render(
     <IconButton className='xxl' name='cv'/>
     <IconButton className='xxl' name='discord'/>
     <IconButton className='xxl' name='web'/><br></br>
-    <A href='./'><H2>Test</H2></A>
+    <H2><A href='./'>Test</A></H2>
     <Picture name='bg' className='xs'/> <br/>
     <Picture name='bg'/><br/>
     <Picture name='bg' className='xl'/><br/>

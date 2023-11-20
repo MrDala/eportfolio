@@ -7,7 +7,9 @@ type Props = {
 
 const Button = ({ className, children } : Props ) => {
   return (
-    <button className={className ? className : ""}>{children}</button>
+    <button className={className ? className : ""}>
+      {children}
+    </button>
   );
 };
 
