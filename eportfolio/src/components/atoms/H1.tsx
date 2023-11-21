@@ -1,12 +1,7 @@
 import '../../style/H1.css';
-import A from './A';
+import { TextProps } from '../types';
 
-type Props = {
-  className?: string,
-  children: string | React.ReactElement<typeof A>
-};
-
-const H1 = ({ className, children } : Props ) => {
+const H1 = ({ className, children } : TextProps ) => {
   return (
     <h1 className={className ? className : ""}>
       {children}

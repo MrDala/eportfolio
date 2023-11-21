@@ -1,7 +1,7 @@
 .line {
+  display: block;
   border: solid 1px;
-  width: 80%;
-  margin: 10px auto;
+  width: 600px;
 }
 
 .line.color {

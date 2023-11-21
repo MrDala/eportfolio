@@ -1,0 +1,9 @@
+.Title .texte {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  gap: 60px;
+  margin-bottom: 20px;
+}
+

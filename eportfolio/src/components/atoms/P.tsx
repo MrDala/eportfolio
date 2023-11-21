@@ -1,13 +1,9 @@
 import '../../style/P.css';
-import A from './A';
+import { TextProps } from '../types';
 
-type Props = {
-  children: string | React.ReactElement<typeof A>
-};
-
-const P = ({ children } : Props ) => {
+const P = ({ className, children } : TextProps ) => {
   return (
-    <p>
+    <p className={className}>
       {children}
     </p>
   );

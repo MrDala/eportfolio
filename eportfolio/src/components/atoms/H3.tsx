@@ -1,13 +1,9 @@
 import '../../style/H3.css';
-import A from './A';
+import { TextProps } from '../types';
 
-type Props = {
-  children: string | React.ReactElement<typeof A>
-};
-
-const H3 = ({ children } : Props ) => {
+const H3 = ({ className, children } : TextProps ) => {
   return (
-    <h3>
+    <h3 className={className}>
       {children}
     </h3>
   );
