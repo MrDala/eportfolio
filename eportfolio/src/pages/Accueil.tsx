@@ -14,7 +14,6 @@ function Accueil() {
   };
 
   const closeSideBar = () => {
-    console.log(isSideBarOpen);
     if (isSideBarOpen) {
       setIsSideBarOpen(false);
     }
