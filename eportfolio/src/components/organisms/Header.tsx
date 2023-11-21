@@ -1,7 +1,7 @@
 import '../../style/Header.css';
 import IconButton from '../atoms/IconButton';
 import Title from '../molecules/Title';
-import { IconButtonProps } from '../types';
+import { IconButtonProps } from '../Types';
 
 type Props = {
   icon1: IconButtonProps,
@@ -16,7 +16,8 @@ const Header = ({ icon1, icon2, icon3, titre1, titre2 }: Props) => {
   return (
     <div className='Header'>
       <div className='col1'>
-        <IconButton name={icon1.name} className={icon1.className} openInNewTab={icon1.openInNewTab} openOverlay={icon1.openOverlay} link={icon1.link} />
+        <IconButton name={icon1.name} className={icon1.className} onClick={icon1.onClick ?? (() => {})} />
+        
       </div>
 
       <div className='col2'>
@@ -24,8 +25,8 @@ const Header = ({ icon1, icon2, icon3, titre1, titre2 }: Props) => {
       </div>
 
       <div className='col3'>
-      <IconButton name={icon2.name} className={icon2.className} openInNewTab={icon2.openInNewTab} openOverlay={icon2.openOverlay} link={icon2.link} />
-      <IconButton name={icon3.name} className={icon3.className} openInNewTab={icon3.openInNewTab} openOverlay={icon3.openOverlay} link={icon3.link} />
+      <IconButton name={icon2.name} className={icon2.className} onClick={icon2.onClick ?? (() => {})} />
+      <IconButton name={icon3.name} className={icon3.className} onClick={icon3.onClick ?? (() => {})} />
       </div>
     </div>
   );

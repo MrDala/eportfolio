@@ -1,5 +1,5 @@
 import '../../style/P.css';
-import { TextProps } from '../types';
+import { TextProps } from '../Types';
 
 const P = ({ className, children } : TextProps ) => {
   return (

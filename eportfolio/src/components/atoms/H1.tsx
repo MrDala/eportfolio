@@ -1,5 +1,5 @@
 import '../../style/H1.css';
-import { TextProps } from '../types';
+import { TextProps } from '../Types';
 
 const H1 = ({ className, children } : TextProps ) => {
   return (

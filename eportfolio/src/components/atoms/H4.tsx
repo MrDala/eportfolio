@@ -1,5 +1,5 @@
 import '../../style/H4.css';
-import { TextProps } from '../types';
+import { TextProps } from '../Types';
 
 const H4 = ({ className, children } : TextProps ) => {
   return (
