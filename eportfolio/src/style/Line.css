@@ -1,7 +1,8 @@
+/* Petit écran */
 .line {
   display: block;
   border: solid 1px;
-  width: 600px;
+  width: 100px;
 }
 
 .line.color {
@@ -14,4 +15,22 @@
   background-image: linear-gradient(to right, #000 15%, rgba(255, 255, 255, 0) 0%);
   background-size: 10px 1.5px;
   background-repeat: repeat-x;
+}
+
+/* Moyen écran */
+@media (min-width: 641px) {
+  .line {
+    display: block;
+    border: solid 1px;
+    width: 200px;
+  }
+}
+
+/* Grand écran */
+@media (min-width: 1008px) {
+  .line {
+    display: block;
+    border: solid 1px;
+    width: 600px;
+  }
 }

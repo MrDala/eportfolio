@@ -1,22 +1,5 @@
 .icon {
-  width: 50px;
-  height: 50px;
   transition: filter 0.15s ease-in-out;
-}
-
-.icon.xs {
-  width: 35px;
-  height: 35px;
-}
-
-.icon.xl {
-  width: 65px;
-  height: 65px;
-}
-
-.icon.xxl {
-  width: 80px;
-  height: 80px;
 }
 
 .icon:hover {
@@ -26,4 +9,38 @@
 
 .icon:active {
   transform: translateY(1px);
+}
+
+@media (min-width: 641px) {
+  .icon.xs {
+    width: 25px;
+    height: 25px;
+  }
+
+  .icon {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (min-width: 1008px) {  
+  .icon.xs {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .icon.xl {
+    width: 65px;
+    height: 65px;
+  }
+  
+  .icon.xxl {
+    width: 80px;
+    height: 80px;
+  }
 }

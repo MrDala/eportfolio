@@ -1,3 +1,4 @@
+/* Petit écran */
 .Header {
   display: flex;
   width: 100%;
@@ -7,11 +8,48 @@
 .Header .col1, .Header .col3 {
   display: flex;
   align-items: center;
-  width: 30%;
-  padding: 0 1em;
+}
+
+.Header .col2 {
+  width: 100%;
 }
 
 .Header .col3 {
   gap: 0.5em;
   justify-content: end;
+}
+
+.Header .col1, .Header .col3 {
+  display: none;
+}
+
+/* Moyen écran */
+@media (min-width: 641px) {
+  .Header .col1, .Header .col3 {
+    display: flex;
+    width: 20%;
+  }
+
+  .Header .col2 {
+    width: 60%;
+  }
+
+  .Header .col1 {
+    padding-left: 80px;
+  }
+
+  .Header .col3 {
+    padding-right: 40px;
+  }
+}
+
+/* Grand écran */
+@media (min-width: 1008px) {
+  .Header .col1 {
+    padding-left: 80px;
+  }
+
+  .Header .col3 {
+    padding-right: 80px;
+  }
 }

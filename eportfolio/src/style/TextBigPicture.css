@@ -1,0 +1,46 @@
+
+/* Petit écran */
+.TextBigPicture {
+  margin: 40px 20px;
+}
+
+.TextBigPicture .col1 {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.TextBigPicture .content {
+  margin: 1em 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Moyen écran */
+@media (min-width: 641px) {
+  .TextBigPicture {
+    margin: 40px 80px;
+  }
+
+  .TextBigPicture .col1 {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+/* Grand écran */
+@media (min-width: 1008px) {
+  .TextBigPicture {
+    margin: 40px 80px;
+  }
+
+  .TextBigPicture .content {
+    flex-direction: row; 
+  }
+
+  .TextBigPicture .col1 {
+    width: 50%;
+    padding-right: 100px;
+  }
+}

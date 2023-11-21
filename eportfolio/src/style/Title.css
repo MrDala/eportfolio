@@ -1,9 +1,30 @@
-.Title .texte {
+/* Petit écran */
+.Title, .Title .texte, .Title .line {
   display: flex;
-  flex-wrap: wrap;
   text-align: center;
   justify-content: center;
-  gap: 60px;
-  margin-bottom: 20px;
+  margin: auto;
 }
 
+.Title {
+  flex-direction: column;
+}
+
+.Title .texte {
+  flex-wrap: wrap;
+  margin-bottom: 5px;
+  gap: 0 20px;
+}
+
+/* Moyen écran */
+@media (min-width: 641px) {
+
+}
+
+/* Grand écran */
+@media (min-width: 1008px) {
+  .Title .texte {
+    margin-bottom: 20px;
+    gap: 60px;
+  }
+}

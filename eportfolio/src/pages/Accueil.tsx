@@ -1,9 +1,10 @@
 import { useState } from "react";
-import A from "../components/atoms/A";
-import H2 from "../components/atoms/H2";
-import SideBar from "../components/molecules/SideBar";
-import Header from "../components/organisms/Header";
+
 import { openLink } from "../tools/function";
+
+import SideBar from "../components/organisms/SideBar";
+import Header from "../components/organisms/Header";
+import TextBigPicture from "../components/organisms/TextBigPicture";
 
 function Accueil() {
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
@@ -13,6 +14,7 @@ function Accueil() {
   };
 
   const closeSideBar = () => {
+    console.log(isSideBarOpen);
     if (isSideBarOpen) {
       setIsSideBarOpen(false);
     }
@@ -22,26 +24,27 @@ function Accueil() {
     <>
       <div>
         <SideBar toggleSideBar={toggleSideBar} isOpen={isSideBarOpen} >
-          <H2>
-            <A href={'#Presentation'}>Présentation</A>
-          </H2>
-          <H2>
-            <A href={'#ExpPro'}>Expériences professionnelles</A>
-          </H2>
-          <H2>
-            <A href={'#Diplomes'}>Diplômes et formations</A>
-          </H2>
-          <H2>
-            <A href={'#Projets'}>Projets</A>
-          </H2>
-          <H2>
-            <A href={'#CV'}>CV</A>
-          </H2>
-          <H2>
-            <A href={'#Contact'}>Contact</A>
-          </H2>
+          <h2>
+            <a href={'#Présentation'} onClick={closeSideBar}>Présentation</a>
+          </h2>
+          <h2>
+            <a href={'#Expériences professionnelles'} onClick={closeSideBar}>Expériences professionnelles</a>
+          </h2>
+          <h2>
+            <a href={'#Diplômes et formations'} onClick={closeSideBar}>Diplômes et formations</a>
+          </h2>
+          <h2>
+            <a href={'#Projets'} onClick={closeSideBar}>Projets</a>
+          </h2>
+          <h2>
+            <a href={'#CV'} onClick={closeSideBar}>CV</a>
+          </h2>
+          <h2>
+            <a href={'#Contact'} onClick={closeSideBar}>Contact</a>
+          </h2>
         </SideBar>
       </div>
+
       <div onClick={() => closeSideBar()}>
         <Header
           titre1='E&#8209;Portfolio'
@@ -60,6 +63,9 @@ function Accueil() {
             onClick: () => openLink('https://www.linkedin.com/in/alexis-leon1/')
           }}
         />
+        <TextBigPicture name="Présentation" picture="bg">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </TextBigPicture>
       </div>
     </>
   );

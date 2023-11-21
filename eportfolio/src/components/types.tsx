@@ -1,5 +1,3 @@
-import A from "./atoms/A";
-
 export type IconButtonProps = {
   name: string;
   className?: string;
@@ -7,6 +5,6 @@ export type IconButtonProps = {
 };
 
 export type TextProps = {
-  children: string | React.ReactElement<typeof A>,
+  children: string | React.ReactNode,
   className ?: string;
 }
