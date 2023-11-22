@@ -10,43 +10,44 @@ import CardExpPro from "../components/molecules/CardExpPro";
 
 function Accueil() {
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
+  const [isVoletExpProOpen, setVoletExpProOpen] = useState(false);
 
+  /* Volet experience pro */
+  const toggleVoletExpPro = () => {
+    setVoletExpProOpen(!isVoletExpProOpen);
+  };
+
+  /* Volet side bar */
   const toggleSideBar = () => {
     setIsSideBarOpen(!isSideBarOpen);
   };
-
-  const closeSideBar = () => {
-    if (isSideBarOpen) {
-      setIsSideBarOpen(false);
-    }
-  };
-
+  
   return (
     <>
       <div>
         <SideBar toggleSideBar={toggleSideBar} isOpen={isSideBarOpen} >
           <h2>
-            <a href={'#Présentation'} onClick={closeSideBar}>Présentation</a>
+            <a href={'#Présentation'} onClick={() => setIsSideBarOpen(false)}>Présentation</a>
           </h2>
           <h2>
-            <a href={'#Expériences professionnelles'} onClick={closeSideBar}>Expériences professionnelles</a>
+            <a href={'#Expériences professionnelles'} onClick={() => setIsSideBarOpen(false)}>Expériences professionnelles</a>
           </h2>
           <h2>
-            <a href={'#Diplômes et formations'} onClick={closeSideBar}>Diplômes et formations</a>
+            <a href={'#Diplômes et formations'} onClick={() => setIsSideBarOpen(false)}>Diplômes et formations</a>
           </h2>
           <h2>
-            <a href={'#Projets'} onClick={closeSideBar}>Projets</a>
+            <a href={'#Projets'} onClick={() => setIsSideBarOpen(false)}>Projets</a>
           </h2>
           <h2>
-            <a href={'#CV'} onClick={closeSideBar}>CV</a>
+            <a href={'#CV'} onClick={() => setIsSideBarOpen(false)}>CV</a>
           </h2>
           <h2>
-            <a href={'#Contact'} onClick={closeSideBar}>Contact</a>
+            <a href={'#Contact'} onClick={() => setIsSideBarOpen(false)}>Contact</a>
           </h2>
         </SideBar>
       </div>
 
-      <div onClick={() => closeSideBar()}>
+      <div>
         <Header
           titre1='E&#8209;Portfolio'
           titre2='Alexis&#160;LEON'
@@ -68,15 +69,10 @@ function Accueil() {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </BlocTextImage>
         <BlocExpPro name="Expériences professionnelles">
-          <CardExpPro picture="bg" poste="Nom du poste" entreprise="Nom de l'entreprise" date="Date du contrat"/>
-          <CardExpPro picture="bg" poste="Nom du poste" entreprise="Nom de l'entreprise" date="Date du contrat"/>
-          <CardExpPro picture="bg" poste="Nom du poste" entreprise="Nom de l'entreprise" date="Date du contrat"/>
-          <CardExpPro picture="bg" poste="Nom du poste" entreprise="Nom de l'entreprise" date="Date du contrat"/>
-          <CardExpPro picture="bg" poste="Nom du poste" entreprise="Nom de l'entreprise" date="Date du contrat"/>
-          <CardExpPro picture="bg" poste="Nom du poste" entreprise="Nom de l'entreprise" date="Date du contrat"/>
-          <CardExpPro picture="bg" poste="Nom du poste" entreprise="Nom de l'entreprise" date="Date du contrat"/>
-          <CardExpPro picture="bg" poste="Nom du poste" entreprise="Nom de l'entreprise" date="Date du contrat"/>
-          <CardExpPro picture="bg" poste="Nom du poste" entreprise="Nom de l'entreprise" date="Date du contrat"/>
+          <CardExpPro picture="bg" poste="Nom du poste" entreprise="Nom de l'entreprise" adresse="adresse" isOpen={isVoletExpProOpen} toggleVoletExpPro={toggleVoletExpPro} date="Date du contrat">
+          <h4>Sous-titre</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus eget nunc scelerisque viverra mauris. Laoreet sit amet cursus sit. Sem fringilla ut morbi tincidunt augue interdum velit. Facilisis leo vel fringilla est ullamcorper eget nulla. Sapien nec sagittis aliquam malesuada bibendum arcu vitae. Amet nulla facilisi morbi tempus iaculis urna id volutpat. Tellus integer feugiat scelerisque varius. Dictum varius duis at consectetur. Pellentesque habitant morbi tristique senectus et netus et. Libero id faucibus nisl tincidunt eget nullam. Id faucibus nisl tincidunt eget nullam. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi. Odio ut enim blandit volutpat maecenas volutpat. Tristique et egestas quis ipsum suspendisse. Sit amet consectetur adipiscing elit ut aliquam purus sit. Vel eros donec ac odio. Suspendisse interdum consectetur libero id faucibus nisl tincidunt eget nullam.</p>
+          </CardExpPro>
         </BlocExpPro>
       </div>
     </>

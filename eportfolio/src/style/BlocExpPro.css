@@ -10,7 +10,7 @@
   flex-wrap: wrap;
 }
 
-.BlocExpPro .content > * {
+.BlocExpPro .content .CardExpPro {
   margin: 10px;
 }
 
@@ -20,14 +20,14 @@
     padding: 20px 80px;
   }
 
-  .BlocExpPro .content > * {
+  .BlocExpPro .content .CardExpPro {
     margin: 10px;
   }
 }
 
 /* Moyen écran */
 @media (min-width: 1008px) {
-  .BlocExpPro .content > * {
+  .BlocExpPro .content .CardExpPro{
     margin: 20px;
   }
 }
