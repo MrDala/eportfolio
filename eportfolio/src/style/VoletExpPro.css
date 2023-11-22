@@ -7,7 +7,7 @@
   position: fixed;
   bottom: 0;
   height: 90vh;
-  width: 80vw;
+  width: 90vw;
   z-index: 1000;
   overflow-y: auto;
 
@@ -23,19 +23,15 @@
 
 
 .VoletExpPro .content {
-  display: flex;
+  display: block;
   justify-content:initial;
   padding: 0 10%;
   max-height: 100%;
   overflow-y: auto;
 }
 
-.VoletExpPro .description {
-  margin-top: 50px;
-}
-
-.VoletExpPro .col1, .VoletExpPro .col2 {
-  width: 50%;
+.VoletExpPro .col1,.VoletExpPro .col2 {
+  margin-bottom: 1em;
 }
 
 .VoletExpPro .col2 {
@@ -50,4 +46,25 @@
   margin-left: auto;
   padding-top: 25px;
   padding-right: 25px;
+}
+
+@media (min-width: 641px) {
+  .VoletExpPro {
+    width: 80%;
+  }
+
+  .VoletExpPro .content {
+    display: flex;
+  }
+
+  .VoletExpPro .col1, .VoletExpPro .col2 {
+    width: 50%;
+  }
+
+  .VoletExpPro .description {
+    margin-top: 50px;
+  }
+}
+
+@media (min-width: 1008px) {
 }
