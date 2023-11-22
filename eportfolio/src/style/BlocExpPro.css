@@ -1,0 +1,33 @@
+.BlocExpPro {
+  background-color: #FFF2F2;
+  padding: 10px 20px;
+}
+
+.BlocExpPro .content {
+  margin: 30px 0;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.BlocExpPro .content > * {
+  margin: 10px;
+}
+
+/* Moyen écran */
+@media (min-width: 641px) {
+  .BlocExpPro {
+    padding: 20px 80px;
+  }
+
+  .BlocExpPro .content > * {
+    margin: 10px;
+  }
+}
+
+/* Moyen écran */
+@media (min-width: 1008px) {
+  .BlocExpPro .content > * {
+    margin: 20px;
+  }
+}

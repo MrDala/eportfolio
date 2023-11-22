@@ -1,15 +1,15 @@
 
 /* Petit écran */
-.TextBigPicture {
-  margin: 40px 20px;
+.BlocTextImage {
+  padding: 10px 20px;
 }
 
-.TextBigPicture .col1 {
+.BlocTextImage .col1 {
   width: 100%;
   margin-bottom: 20px;
 }
 
-.TextBigPicture .content {
+.BlocTextImage .content {
   margin: 1em 0;
   width: 100%;
   display: flex;
@@ -19,11 +19,11 @@
 
 /* Moyen écran */
 @media (min-width: 641px) {
-  .TextBigPicture {
-    margin: 40px 80px;
+  .BlocTextImage {
+    padding: 40px 80px;
   }
 
-  .TextBigPicture .col1 {
+  .BlocTextImage .col1 {
     width: 100%;
     margin-bottom: 20px;
   }
@@ -31,15 +31,11 @@
 
 /* Grand écran */
 @media (min-width: 1008px) {
-  .TextBigPicture {
-    margin: 40px 80px;
-  }
-
-  .TextBigPicture .content {
+  .BlocTextImage .content {
     flex-direction: row; 
   }
 
-  .TextBigPicture .col1 {
+  .BlocTextImage .col1 {
     width: 50%;
     padding-right: 100px;
   }

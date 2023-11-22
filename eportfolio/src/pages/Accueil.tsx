@@ -4,7 +4,9 @@ import { openLink } from "../tools/function";
 
 import SideBar from "../components/organisms/SideBar";
 import Header from "../components/organisms/Header";
-import TextBigPicture from "../components/organisms/TextBigPicture";
+import BlocTextImage from "../components/organisms/BlocTextImage";
+import BlocExpPro from "../components/organisms/BlocExpPro";
+import CardExpPro from "../components/molecules/CardExpPro";
 
 function Accueil() {
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
@@ -62,9 +64,20 @@ function Accueil() {
             onClick: () => openLink('https://www.linkedin.com/in/alexis-leon1/')
           }}
         />
-        <TextBigPicture name="Présentation" picture="bg">
+        <BlocTextImage name="Présentation" picture="bg">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </TextBigPicture>
+        </BlocTextImage>
+        <BlocExpPro name="Expériences professionnelles">
+          <CardExpPro picture="bg" poste="Nom du poste" entreprise="Nom de l'entreprise" date="Date du contrat"/>
+          <CardExpPro picture="bg" poste="Nom du poste" entreprise="Nom de l'entreprise" date="Date du contrat"/>
+          <CardExpPro picture="bg" poste="Nom du poste" entreprise="Nom de l'entreprise" date="Date du contrat"/>
+          <CardExpPro picture="bg" poste="Nom du poste" entreprise="Nom de l'entreprise" date="Date du contrat"/>
+          <CardExpPro picture="bg" poste="Nom du poste" entreprise="Nom de l'entreprise" date="Date du contrat"/>
+          <CardExpPro picture="bg" poste="Nom du poste" entreprise="Nom de l'entreprise" date="Date du contrat"/>
+          <CardExpPro picture="bg" poste="Nom du poste" entreprise="Nom de l'entreprise" date="Date du contrat"/>
+          <CardExpPro picture="bg" poste="Nom du poste" entreprise="Nom de l'entreprise" date="Date du contrat"/>
+          <CardExpPro picture="bg" poste="Nom du poste" entreprise="Nom de l'entreprise" date="Date du contrat"/>
+        </BlocExpPro>
       </div>
     </>
   );

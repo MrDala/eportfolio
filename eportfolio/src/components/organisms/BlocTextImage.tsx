@@ -1,4 +1,4 @@
-import '../../style/TextBigPicture.css';
+import '../../style/BlocTextImage.css';
 
 type Props = {
   name: string,
@@ -6,11 +6,11 @@ type Props = {
   picture: string
 };
 
-const TextBigPicture = ({ name, children, picture }: Props) => {
+const BlocTextImage = ({ name, children, picture }: Props) => {
   const root = "./ressources/images/";
 
   return (
-    <div className='TextBigPicture' id={name}>
+    <div className='BlocTextImage' id={name}>
       <h2 className='secondaire'>{name}</h2>
       <div className='content'>
         <div className='col1'>
@@ -24,4 +24,4 @@ const TextBigPicture = ({ name, children, picture }: Props) => {
   );
 };
 
-export default TextBigPicture;
+export default BlocTextImage;
