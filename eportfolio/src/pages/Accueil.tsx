@@ -7,6 +7,10 @@ import Header from "../components/organisms/Header";
 import BlocTextImage from "../components/organisms/BlocTextImage";
 import BlocExpPro from "../components/organisms/BlocExpPro";
 import CardExpPro from "../components/molecules/CardExpPro";
+import BlocDiplomes from "../components/organisms/BlocTable";
+import Raw from "../components/molecules/Raw";
+import Button from "../components/atoms/Button";
+import ImageText from "../components/atoms/ImageText";
 
 function Accueil() {
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
@@ -21,7 +25,7 @@ function Accueil() {
   const toggleSideBar = () => {
     setIsSideBarOpen(!isSideBarOpen);
   };
-  
+
   return (
     <>
       <div>
@@ -72,12 +76,25 @@ function Accueil() {
 
         <BlocExpPro name="Expériences professionnelles">
           <CardExpPro picture="bg" poste="Nom du poste" entreprise="Nom de l'entreprise" adresse="adresse" isOpen={isVoletExpProOpen} toggleVoletExpPro={toggleVoletExpPro} date="Date du contrat">
-          <h4>Sous-titre</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus eget nunc scelerisque viverra mauris. Laoreet sit amet cursus sit. Sem fringilla ut morbi tincidunt augue interdum velit. Facilisis leo vel fringilla est ullamcorper eget nulla. Sapien nec sagittis aliquam malesuada bibendum arcu vitae. Amet nulla facilisi morbi tempus iaculis urna id volutpat. Tellus integer feugiat scelerisque varius. Dictum varius duis at consectetur. Pellentesque habitant morbi tristique senectus et netus et. Libero id faucibus nisl tincidunt eget nullam. Id faucibus nisl tincidunt eget nullam. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi. Odio ut enim blandit volutpat maecenas volutpat. Tristique et egestas quis ipsum suspendisse. Sit amet consectetur adipiscing elit ut aliquam purus sit. Vel eros donec ac odio. Suspendisse interdum consectetur libero id faucibus nisl tincidunt eget nullam.</p>
+            <h4>Sous-titre</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus eget nunc scelerisque viverra mauris. Laoreet sit amet cursus sit. Sem fringilla ut morbi tincidunt augue interdum velit. Facilisis leo vel fringilla est ullamcorper eget nulla. Sapien nec sagittis aliquam malesuada bibendum arcu vitae. Amet nulla facilisi morbi tempus iaculis urna id volutpat. Tellus integer feugiat scelerisque varius. Dictum varius duis at consectetur. Pellentesque habitant morbi tristique senectus et netus et. Libero id faucibus nisl tincidunt eget nullam. Id faucibus nisl tincidunt eget nullam. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi. Odio ut enim blandit volutpat maecenas volutpat. Tristique et egestas quis ipsum suspendisse. Sit amet consectetur adipiscing elit ut aliquam purus sit. Vel eros donec ac odio. Suspendisse interdum consectetur libero id faucibus nisl tincidunt eget nullam.</p>
           </CardExpPro>
         </BlocExpPro>
 
-        
+        <BlocDiplomes name="Diplômes et formations" heads={["Diplôme", "Année", "Établissement", "Lien"]}>
+          <Raw args={[
+            <p className="big">Nom du diplôme</p>,
+            <p className="big">2018</p>,
+            <ImageText className="xs" nameImage="UniversiteParisCite" text="Université Paris Cité" />,
+            <Button text="infos" />]}
+          />
+          <Raw args={[
+            <p className="big">Nom du diplôme</p>,
+            <p className="big">2018</p>,
+            <ImageText className="xs" nameImage="UniversiteParisCite" text="Université Paris Cité" />,
+            <Button text="infos" />]}
+          />
+        </BlocDiplomes>
       </div>
     </>
   );

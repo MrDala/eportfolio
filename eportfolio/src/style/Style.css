@@ -43,7 +43,7 @@ h2 {
 
 h2.secondaire:after {
   background: #BA324F;
-  bottom: 0;
+  bottom: -2px;
   content: "";
   width: 30px;
   height: 2.5px;
@@ -86,6 +86,10 @@ img.xl {
 
 
 @media (min-width: 641px) {
+  p.big {
+    font-size: 14px;
+  }
+
   img {
     width: 100px;
     height: 100px;
@@ -99,6 +103,10 @@ img.xl {
 }
 
 @media (min-width: 1008px) {
+  p.big {
+    font-size: 16px;
+  }
+
   img.xs {
     width: 40px;
     height: 40px;
@@ -108,5 +116,5 @@ img.xl {
   img.xl {
     width: 650px;
     height: 250px;
-  }  
+  } 
 }
