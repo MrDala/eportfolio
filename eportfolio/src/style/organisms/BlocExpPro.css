@@ -1,0 +1,26 @@
+/* Commun */
+.BlocExpPro  .CardExpPro {
+  margin: 10px;
+}
+
+/* Mobile */
+@media (min-width: 0px) and (max-width: 640px) {
+}
+
+/* Tablette */
+@media (min-width: 641px) and (max-width: 1007px) {
+  .BlocExpPro  .CardExpPro {
+    margin: 10px;
+  }
+}
+
+/* Petit écran PC */
+@media (min-width: 1008px) and (max-width: 1399px) {
+}
+
+/* Écran PC */
+@media (min-width: 1400px) {
+  .BlocExpPro  .CardExpPro{
+    margin: 20px;
+  }
+}

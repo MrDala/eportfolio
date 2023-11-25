@@ -1,4 +1,4 @@
-import '../../style/BlocTextImage.css';
+import '../../style/organisms/BlocTextImage.css';
 
 type Props = {
   name: string,
@@ -11,14 +11,11 @@ const BlocTextImage = ({ name, children, picture }: Props) => {
 
   return (
     <div className='BlocTextImage' id={name}>
-      <h2 className='secondaire'>{name}</h2>
-      <div className='content'>
-        <div className='col1'>
-          <p>{children}</p>
-        </div>
-        <div className='col2'>
-          <img className='xl' src={root + picture + ".png"} alt={picture} />
-        </div>
+      <div className='col1'>
+        <p>{children}</p>
+      </div>
+      <div className='col2'>
+        <img className='xl' src={root + picture + ".png"} alt={picture} />
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import '../../style/BlocExpPro.css';
+import '../../style/organisms/BlocExpPro.css';
 
 type Props = {
   name: string,
@@ -8,10 +8,7 @@ type Props = {
 const BlocExpPro = ({ name, children }: Props) => {
   return (
     <div className='BlocExpPro' id={name}>
-      <h2 className='secondaire'>{name}</h2>
-      <div className='content'>
-        {children}
-      </div>
+      {children}
     </div>
   );
 };

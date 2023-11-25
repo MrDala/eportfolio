@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
-import '../../style/VoletExpPro.css';
+
+import '../../style/molecules/VoletExpPro.css';
 import IconButton from '../atoms/IconButton';
 
 type Props = {
@@ -32,20 +33,25 @@ const VoletExpPro = ({ poste, entreprise, adresse, date, isOpen, toggleVoletExpP
 
   return (
     <div ref={divRef} className={"VoletExpPro " + (isOpen ? 'open' : '')}>
-      <IconButton name='close' className='xs' onClick={toggleVoletExpPro}/>
-      <div className='content'>
-        <div className="col1">
-          <h2>{poste}</h2>
+      <IconButton name='close' className='xs' onClick={toggleVoletExpPro} />
+      <div className='textZone'>
+        <div className='head'>
+          <div className="col1">
+            <h2>{poste}</h2>
+          </div>
+
+          <div className="col2">
+            <h3>{entreprise}</h3>
+            <p>{adresse}</p>
+            <p>{date}</p>
+          </div>
         </div>
-        <div className="col2">
-          <h3>{entreprise}</h3>
-          <p>{adresse}</p>
-          <p>{date}</p>
-        </div>
+
         <div className='description'>
           {children}
         </div>
       </div>
+
     </div>
   );
 };

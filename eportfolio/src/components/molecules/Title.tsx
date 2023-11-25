@@ -1,4 +1,4 @@
-import '../../style/Title.css';
+import '../../style/molecules/Title.css';
 import Line from '../atoms/Line';
 
 type Props = {

@@ -1,4 +1,4 @@
-import '../../style/IconButton.css';
+import '../../style/atoms/IconButton.css';
 import { IconButtonProps } from '../Types';
 
 const IconButton = ({

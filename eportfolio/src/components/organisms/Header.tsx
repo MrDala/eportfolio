@@ -1,4 +1,4 @@
-import '../../style/Header.css';
+import '../../style/organisms/Header.css';
 import IconButton from '../atoms/IconButton';
 import Title from '../molecules/Title';
 import { IconButtonProps } from '../Types';

@@ -1,4 +1,4 @@
-import '../../style/Line.css';
+import '../../style/atoms/Line.css';
 
 type Props = {
   className?: string;

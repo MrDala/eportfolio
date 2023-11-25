@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { openLink } from "../tools/function";
 
-import SideBar from "../components/organisms/SideBar";
+import VoletMenu from "../components/molecules/VoletMenu";
 import Header from "../components/organisms/Header";
 import BlocTextImage from "../components/organisms/BlocTextImage";
 import BlocExpPro from "../components/organisms/BlocExpPro";
@@ -11,44 +11,26 @@ import BlocDiplomes from "../components/organisms/BlocTable";
 import Raw from "../components/molecules/Raw";
 import Button from "../components/atoms/Button";
 import ImageText from "../components/atoms/ImageText";
+import Projet from "../components/molecules/Projet";
+import BlocProjet from "../components/organisms/BlocProjet";
+import Bloc from "../components/organisms/Bloc";
 
 function Accueil() {
-  const [isSideBarOpen, setIsSideBarOpen] = useState(false);
-  const [isVoletExpProOpen, setVoletExpProOpen] = useState(false);
-
-  /* Volet experience pro */
-  const toggleVoletExpPro = () => {
-    setVoletExpProOpen(!isVoletExpProOpen);
-  };
+  const [isVoletMenuOpen, setIsVoletMenuOpen] = useState(false);
 
   /* Volet side bar */
-  const toggleSideBar = () => {
-    setIsSideBarOpen(!isSideBarOpen);
+  const toggleVoletMenu = () => {
+    setIsVoletMenuOpen(!isVoletMenuOpen);
   };
 
   return (
     <>
       <div>
-        <SideBar toggleSideBar={toggleSideBar} isOpen={isSideBarOpen} >
-          <h2>
-            <a href={'#Présentation'} onClick={() => setIsSideBarOpen(false)}>Présentation</a>
-          </h2>
-          <h2>
-            <a href={'#Expériences professionnelles'} onClick={() => setIsSideBarOpen(false)}>Expériences professionnelles</a>
-          </h2>
-          <h2>
-            <a href={'#Diplômes et formations'} onClick={() => setIsSideBarOpen(false)}>Diplômes et formations</a>
-          </h2>
-          <h2>
-            <a href={'#Projets'} onClick={() => setIsSideBarOpen(false)}>Projets</a>
-          </h2>
-          <h2>
-            <a href={'#CV'} onClick={() => setIsSideBarOpen(false)}>CV</a>
-          </h2>
-          <h2>
-            <a href={'#Contact'} onClick={() => setIsSideBarOpen(false)}>Contact</a>
-          </h2>
-        </SideBar>
+        <VoletMenu
+          toggleVoletMenu={toggleVoletMenu}
+          isOpen={isVoletMenuOpen}
+          titles={["Présentation", "Expériences professionnelles", "Diplômes et formations", "Projets", "CV", "Contact"]}
+        />
       </div>
 
       <div>
@@ -58,7 +40,7 @@ function Accueil() {
           icon1={{
             className: 'xs',
             name: 'list',
-            onClick: () => toggleSideBar()
+            onClick: () => toggleVoletMenu()
           }}
           icon2={{
             name: 'cv',
@@ -70,31 +52,111 @@ function Accueil() {
           }}
         />
 
-        <BlocTextImage name="Présentation" picture="bg">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </BlocTextImage>
+        <Bloc name="Présentation">
+          <BlocTextImage name="Présentation" picture="bg">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </BlocTextImage>
+        </Bloc>
 
-        <BlocExpPro name="Expériences professionnelles">
-          <CardExpPro picture="bg" poste="Nom du poste" entreprise="Nom de l'entreprise" adresse="adresse" isOpen={isVoletExpProOpen} toggleVoletExpPro={toggleVoletExpPro} date="Date du contrat">
-            <h4>Sous-titre</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus eget nunc scelerisque viverra mauris. Laoreet sit amet cursus sit. Sem fringilla ut morbi tincidunt augue interdum velit. Facilisis leo vel fringilla est ullamcorper eget nulla. Sapien nec sagittis aliquam malesuada bibendum arcu vitae. Amet nulla facilisi morbi tempus iaculis urna id volutpat. Tellus integer feugiat scelerisque varius. Dictum varius duis at consectetur. Pellentesque habitant morbi tristique senectus et netus et. Libero id faucibus nisl tincidunt eget nullam. Id faucibus nisl tincidunt eget nullam. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi. Odio ut enim blandit volutpat maecenas volutpat. Tristique et egestas quis ipsum suspendisse. Sit amet consectetur adipiscing elit ut aliquam purus sit. Vel eros donec ac odio. Suspendisse interdum consectetur libero id faucibus nisl tincidunt eget nullam.</p>
-          </CardExpPro>
-        </BlocExpPro>
+        <Bloc name="Présentation" color={true}>
+          <BlocExpPro name="Expériences professionnelles">
+            <CardExpPro picture="bg" poste="Nom du poste" entreprise="Nom de l'entreprise" adresse="adresse" date="Date du contrat">
+              <h4>Sous-titre</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus eget nunc scelerisque viverra mauris. Laoreet sit amet cursus sit. Sem fringilla ut morbi tincidunt augue interdum velit. Facilisis leo vel fringilla est ullamcorper eget nulla. Sapien nec sagittis aliquam malesuada bibendum arcu vitae. Amet nulla facilisi morbi tempus iaculis urna id volutpat. Tellus integer feugiat scelerisque varius. Dictum varius duis at consectetur. Pellentesque habitant morbi tristique senectus et netus et. Libero id faucibus nisl tincidunt eget nullam. Id faucibus nisl tincidunt eget nullam. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi. Odio ut enim blandit volutpat maecenas volutpat. Tristique et egestas quis ipsum suspendisse. Sit amet consectetur adipiscing elit ut aliquam purus sit. Vel eros donec ac odio. Suspendisse interdum consectetur libero id faucibus nisl tincidunt eget nullam.</p>
+            </CardExpPro>
+            <CardExpPro picture="bg" poste="Nom du poste" entreprise="Nom de l'entreprise" adresse="adresse" date="Date du contrat">
+              <h4>Sous-titre</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus eget nunc scelerisque viverra mauris. Laoreet sit amet cursus sit. Sem fringilla ut morbi tincidunt augue interdum velit. Facilisis leo vel fringilla est ullamcorper eget nulla. Sapien nec sagittis aliquam malesuada bibendum arcu vitae. Amet nulla facilisi morbi tempus iaculis urna id volutpat. Tellus integer feugiat scelerisque varius. Dictum varius duis at consectetur. Pellentesque habitant morbi tristique senectus et netus et. Libero id faucibus nisl tincidunt eget nullam. Id faucibus nisl tincidunt eget nullam. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi. Odio ut enim blandit volutpat maecenas volutpat. Tristique et egestas quis ipsum suspendisse. Sit amet consectetur adipiscing elit ut aliquam purus sit. Vel eros donec ac odio. Suspendisse interdum consectetur libero id faucibus nisl tincidunt eget nullam.</p>
+            </CardExpPro>
+            <CardExpPro picture="bg" poste="Nom du poste" entreprise="Nom de l'entreprise" adresse="adresse" date="Date du contrat">
+              <h4>Sous-titre</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus eget nunc scelerisque viverra mauris. Laoreet sit amet cursus sit. Sem fringilla ut morbi tincidunt augue interdum velit. Facilisis leo vel fringilla est ullamcorper eget nulla. Sapien nec sagittis aliquam malesuada bibendum arcu vitae. Amet nulla facilisi morbi tempus iaculis urna id volutpat. Tellus integer feugiat scelerisque varius. Dictum varius duis at consectetur. Pellentesque habitant morbi tristique senectus et netus et. Libero id faucibus nisl tincidunt eget nullam. Id faucibus nisl tincidunt eget nullam. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi. Odio ut enim blandit volutpat maecenas volutpat. Tristique et egestas quis ipsum suspendisse. Sit amet consectetur adipiscing elit ut aliquam purus sit. Vel eros donec ac odio. Suspendisse interdum consectetur libero id faucibus nisl tincidunt eget nullam.</p>
+            </CardExpPro>
+            <CardExpPro picture="bg" poste="Nom du poste" entreprise="Nom de l'entreprise" adresse="adresse" date="Date du contrat">
+              <h4>Sous-titre</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus eget nunc scelerisque viverra mauris. Laoreet sit amet cursus sit. Sem fringilla ut morbi tincidunt augue interdum velit. Facilisis leo vel fringilla est ullamcorper eget nulla. Sapien nec sagittis aliquam malesuada bibendum arcu vitae. Amet nulla facilisi morbi tempus iaculis urna id volutpat. Tellus integer feugiat scelerisque varius. Dictum varius duis at consectetur. Pellentesque habitant morbi tristique senectus et netus et. Libero id faucibus nisl tincidunt eget nullam. Id faucibus nisl tincidunt eget nullam. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi. Odio ut enim blandit volutpat maecenas volutpat. Tristique et egestas quis ipsum suspendisse. Sit amet consectetur adipiscing elit ut aliquam purus sit. Vel eros donec ac odio. Suspendisse interdum consectetur libero id faucibus nisl tincidunt eget nullam.</p>
+            </CardExpPro>
+            <CardExpPro picture="bg" poste="Nom du poste" entreprise="Nom de l'entreprise" adresse="adresse" date="Date du contrat">
+              <h4>Sous-titre</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus eget nunc scelerisque viverra mauris. Laoreet sit amet cursus sit. Sem fringilla ut morbi tincidunt augue interdum velit. Facilisis leo vel fringilla est ullamcorper eget nulla. Sapien nec sagittis aliquam malesuada bibendum arcu vitae. Amet nulla facilisi morbi tempus iaculis urna id volutpat. Tellus integer feugiat scelerisque varius. Dictum varius duis at consectetur. Pellentesque habitant morbi tristique senectus et netus et. Libero id faucibus nisl tincidunt eget nullam. Id faucibus nisl tincidunt eget nullam. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi. Odio ut enim blandit volutpat maecenas volutpat. Tristique et egestas quis ipsum suspendisse. Sit amet consectetur adipiscing elit ut aliquam purus sit. Vel eros donec ac odio. Suspendisse interdum consectetur libero id faucibus nisl tincidunt eget nullam.</p>
+            </CardExpPro>
+            <CardExpPro picture="bg" poste="Nom du poste" entreprise="Nom de l'entreprise" adresse="adresse" date="Date du contrat">
+              <h4>Sous-titre</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus eget nunc scelerisque viverra mauris. Laoreet sit amet cursus sit. Sem fringilla ut morbi tincidunt augue interdum velit. Facilisis leo vel fringilla est ullamcorper eget nulla. Sapien nec sagittis aliquam malesuada bibendum arcu vitae. Amet nulla facilisi morbi tempus iaculis urna id volutpat. Tellus integer feugiat scelerisque varius. Dictum varius duis at consectetur. Pellentesque habitant morbi tristique senectus et netus et. Libero id faucibus nisl tincidunt eget nullam. Id faucibus nisl tincidunt eget nullam. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi. Odio ut enim blandit volutpat maecenas volutpat. Tristique et egestas quis ipsum suspendisse. Sit amet consectetur adipiscing elit ut aliquam purus sit. Vel eros donec ac odio. Suspendisse interdum consectetur libero id faucibus nisl tincidunt eget nullam.</p>
+            </CardExpPro>
+          </BlocExpPro>
+        </Bloc>
 
-        <BlocDiplomes name="Diplômes et formations" heads={["Diplôme", "Année", "Établissement", "Lien"]}>
-          <Raw args={[
-            <p className="big">Nom du diplôme</p>,
-            <p className="big">2018</p>,
-            <ImageText className="xs" nameImage="UniversiteParisCite" text="Université Paris Cité" />,
-            <Button text="infos" />]}
-          />
-          <Raw args={[
-            <p className="big">Nom du diplôme</p>,
-            <p className="big">2018</p>,
-            <ImageText className="xs" nameImage="UniversiteParisCite" text="Université Paris Cité" />,
-            <Button text="infos" />]}
-          />
-        </BlocDiplomes>
+        <Bloc name="Diplômes et formations">
+          <BlocDiplomes name="Diplômes et formations" heads={["Diplôme", "Année", "Établissement", "Lien"]}>
+            <Raw args={[
+              <p className="big">Nom du diplôme</p>,
+              <p className="big">2018</p>,
+              <ImageText className="xs" nameImage="UniversiteParisCite" text="Université Paris Cité" />,
+              <Button text="infos" className="xs" />]}
+            />
+            <Raw args={[
+              <p className="big">Nom du diplôme</p>,
+              <p className="big">2018</p>,
+              <ImageText className="xs" nameImage="UniversiteParisCite" text="Université Paris Cité" />,
+              <Button text="infos" className="xs" />]}
+            />
+          </BlocDiplomes>
+        </Bloc>
+
+        <Bloc name="Projets" color={true}>
+          <BlocProjet name="Projets">
+            <Projet
+              name="Nom du projet"
+              date="2023"
+              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+              urlGit="./"
+              urlProjet="./"
+              logos={["JavaScript", "JavaScript", "JavaScript"]}
+            />
+            <Projet
+              name="Nom du projet"
+              date="2023"
+              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+              urlGit="./"
+              urlProjet="./"
+              logos={["JavaScript", "JavaScript", "JavaScript"]}
+            />
+            <Projet
+              name="Nom du projet"
+              date="2023"
+              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+              urlGit="./"
+              urlProjet="./"
+              logos={["JavaScript", "JavaScript", "JavaScript"]}
+            />
+            <Projet
+              name="Nom du projet"
+              date="2023"
+              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+              urlGit="./"
+              urlProjet="./"
+              logos={["JavaScript", "JavaScript", "JavaScript"]}
+            />
+            <Projet
+              name="Nom du projet"
+              date="2023"
+              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+              urlGit="./"
+              urlProjet="./"
+              logos={["JavaScript", "JavaScript", "JavaScript"]}
+            />
+            <Projet
+              name="Nom du projet"
+              date="2023"
+              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+              urlGit="./"
+              urlProjet="./"
+              logos={["JavaScript", "JavaScript", "JavaScript"]}
+            />
+          </BlocProjet>
+        </Bloc>
+
       </div>
     </>
   );

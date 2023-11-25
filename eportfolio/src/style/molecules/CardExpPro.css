@@ -1,0 +1,168 @@
+/* Commun */
+/* Carte complète */
+.CardExpPro {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border: solid 2px #fff;
+  transition: border 0.15s ease-in-out;
+  border-radius: 10px;
+  background-color: #FFF;
+  box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+}
+
+.CardExpPro:hover {
+  cursor: pointer;
+  border: solid 2px #4BA3C3;
+}
+
+.CardExpPro:active {
+  transform: translateY(1px);
+}
+
+.CardExpPro p {
+  font-style: italic;
+}
+
+/* Première colonne */
+.CardExpPro .col1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Seconde colonne */
+.CardExpPro .col2 {
+  display: flex;
+  flex-direction: column;
+  text-align: end;
+}
+
+.CardExpPro .col2 .bot {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+
+/* Mobile */
+@media (min-width: 0px) and (max-width: 640px) {
+  /* Carte complète */
+  .CardExpPro {
+    width: 365px;
+    min-height: 160px;
+    padding: 0 20px 0 10px;
+    gap: 10px;
+  }
+
+  /* 1ère colonne */
+  .CardExpPro .col1 {
+    width: 35%;
+  }
+
+  /* 2nd colonne */
+  .CardExpPro .col2 {
+    width: 65%;
+  }
+
+  .CardExpPro .col2 .top {
+    margin-top: 20px;
+    height: 40%;
+  }
+
+  .CardExpPro .col2 .bot {
+    margin-bottom: 10px;
+    height: 60%;
+  }
+}
+
+/* Tablette */
+@media (min-width: 641px) and (max-width: 1007px) {
+
+  /* Carte complète */
+  .CardExpPro {
+    width: 300px;
+    min-height: 160px;
+    padding: 0 20px 0 10px;
+    gap: 10px;
+  }
+
+  /* 1ère colonne */
+  .CardExpPro .col1 {
+    width: 40%;
+  }
+
+  /* 2nd colonne */
+  .CardExpPro .col2 {
+    width: 60%;
+  }
+
+  .CardExpPro .col2 .top {
+    padding-top: 20px;
+    height: 40%;
+  }
+
+  .CardExpPro .col2 .bot {
+    height: 60%;
+  }
+}
+
+/* Petit écran PC */
+@media (min-width: 1008px) and (max-width: 1399px) {
+  /* Carte complète */
+  .CardExpPro {
+    width: 330px;
+    min-height: 160px;
+    padding: 0 20px 0 10px;
+    gap: 10px;
+  }
+
+  /* 1ère colonne */
+  .CardExpPro .col1 {
+    width: 40%;
+  }
+
+  /* 2nd colonne */
+  .CardExpPro .col2 {
+    width: 60%;
+  }
+
+  .CardExpPro .col2 .top {
+    padding-top: 20px;
+    height: 40%;
+  }
+
+  .CardExpPro .col2 .bot {
+    height: 60%;
+  }
+}
+
+/* Écran PC */
+@media (min-width: 1400px) {
+  /* Carte complète */
+  .CardExpPro {
+    width: 360px;
+    min-height: 160px;
+    padding: 0 20px 0 10px;
+    gap: 10px;
+  }
+
+  /* 1ère colonne */
+  .CardExpPro .col1 {
+    width: 40%;
+  }
+
+  /* 2nd colonne */
+  .CardExpPro .col2 {
+    width: 60%;
+  }
+
+  .CardExpPro .col2 .top {
+    padding-top: 20px;
+    height: 40%;
+  }
+
+  .CardExpPro .col2 .bot {
+    height: 60%;
+  }
+}

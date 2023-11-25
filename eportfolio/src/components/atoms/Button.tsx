@@ -1,4 +1,4 @@
-import '../../style/Button.css';
+import '../../style/atoms/Button.css';
 
 type Props = {
   className?: string,

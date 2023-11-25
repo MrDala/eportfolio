@@ -1,0 +1,36 @@
+/* Commun */
+.BlocTextImage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Mobile */
+@media (min-width: 0px) and (max-width: 640px) {
+  .BlocTextImage {
+    gap: 15px;
+  }
+}
+
+/* Tablette */
+@media (min-width: 641px) and (max-width: 1007px) {
+  .BlocTextImage {
+    gap: 20px;
+  }
+}
+
+/* Petit écran PC */
+@media (min-width: 1008px) and (max-width: 1399px) {
+  .BlocTextImage {
+    flex-direction: row; 
+    gap: 40px;
+  }
+}
+
+/* Écran PC */
+@media (min-width: 1400px) {
+  .BlocTextImage {
+    flex-direction: row; 
+    gap: 50px;
+  }
+}

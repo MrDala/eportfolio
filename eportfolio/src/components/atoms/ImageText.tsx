@@ -1,4 +1,4 @@
-import '../../style/ImageText.css';
+import '../../style/atoms/ImageText.css';
 
 type Props = {
   className: string,
