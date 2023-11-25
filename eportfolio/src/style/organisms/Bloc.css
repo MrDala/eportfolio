@@ -13,7 +13,11 @@
 /* Mobile */
 @media (min-width: 0px) and (max-width: 640px) {
   .Bloc {
-    padding: 10px 20px;
+    padding: 10px 10%;
+  }
+
+  .Bloc h2 {
+    margin-bottom: 15px;
   }
 }
 
@@ -22,6 +26,10 @@
   .Bloc {
     padding: 20px 80px;
   }
+
+  .Bloc h2 {
+    margin-bottom: 15px;
+  }
 }
 
 /* Petit écran PC */
@@ -29,11 +37,19 @@
   .Bloc {
     padding: 20px 80px;
   }
+
+  .Bloc h2 {
+    margin-bottom: 15px;
+  }
 }
 
 /* Écran PC */
 @media (min-width: 1400px) {
   .Bloc {
     padding: 20px 10%;
+  }
+
+  .Bloc h2 {
+    margin-bottom: 15px;
   }
 }

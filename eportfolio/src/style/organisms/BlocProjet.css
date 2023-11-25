@@ -18,7 +18,7 @@
 @media (min-width: 0px) and (max-width: 640px) {
   .BlocProjet .Projet {
     width: 100%;
-    padding: 2% 2%;
+    padding: 2% 0 4% 0;
   }
 
   .BlocProjet .Projet:nth-child(1n) {
@@ -30,7 +30,7 @@
 @media (min-width: 641px) and (max-width: 1007px) {
   .BlocProjet .Projet {
     width: calc(100% / 2);
-    padding: 2% 2%;
+    padding: 2% 0 3% 0;
   }
 
   .BlocProjet .Projet:nth-child(2n) {
@@ -42,7 +42,7 @@
 @media (min-width: 1008px) and (max-width: 1399px) {
   .BlocProjet .Projet {
     width: calc(100% / 3);
-    padding: 1% 2%;
+    padding: 2% 2% 3% 2%;
   }
 
   .BlocProjet .Projet:nth-child(3n) {
@@ -54,7 +54,7 @@
 @media (min-width: 1400px) {
   .BlocProjet .Projet {
     width: calc(100% / 4);
-    padding: 1% 2%;
+    padding: 2% 2% 3% 2%;
   }
 
   .BlocProjet .Projet:nth-child(4n) {

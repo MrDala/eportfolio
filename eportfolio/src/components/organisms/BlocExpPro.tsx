@@ -1,8 +1,9 @@
 import '../../style/organisms/BlocExpPro.css';
+import CardExpPro from '../molecules/CardExpPro';
 
 type Props = {
   name: string,
-  children?: React.ReactNode | React.ReactNode[];
+  children?: React.ReactElement<typeof CardExpPro> | React.ReactElement<typeof CardExpPro>[];
 };
 
 const BlocExpPro = ({ name, children }: Props) => {

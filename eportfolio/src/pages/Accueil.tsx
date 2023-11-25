@@ -14,6 +14,7 @@ import ImageText from "../components/atoms/ImageText";
 import Projet from "../components/molecules/Projet";
 import BlocProjet from "../components/organisms/BlocProjet";
 import Bloc from "../components/organisms/Bloc";
+import BlocCV from "../components/organisms/BlocCV";
 
 function Accueil() {
   const [isVoletMenuOpen, setIsVoletMenuOpen] = useState(false);
@@ -157,6 +158,9 @@ function Accueil() {
           </BlocProjet>
         </Bloc>
 
+        <Bloc name="Curriculum vitæ">
+          <BlocCV name="Curriculum vitæ" cv="CV_LEON_Alexis"/>
+        </Bloc>
       </div>
     </>
   );

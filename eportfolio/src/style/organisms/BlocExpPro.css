@@ -1,26 +1,37 @@
 /* Commun */
-.BlocExpPro  .CardExpPro {
-  margin: 10px;
+.BlocExpPro {
+  display: flex;
 }
 
 /* Mobile */
 @media (min-width: 0px) and (max-width: 640px) {
+  .BlocExpPro {
+    gap: 20px;
+  }
+
+  .BlocExpPro img {
+    width: 80px;
+    height: 80px;
+  }
 }
 
 /* Tablette */
 @media (min-width: 641px) and (max-width: 1007px) {
-  .BlocExpPro  .CardExpPro {
-    margin: 10px;
+  .BlocExpPro {
+    gap: 20px;
   }
 }
 
 /* Petit écran PC */
 @media (min-width: 1008px) and (max-width: 1399px) {
+  .BlocExpPro {
+    gap: 20px;
+  }
 }
 
 /* Écran PC */
 @media (min-width: 1400px) {
-  .BlocExpPro  .CardExpPro{
-    margin: 20px;
+  .BlocExpPro {
+    gap: 20px;
   }
 }
