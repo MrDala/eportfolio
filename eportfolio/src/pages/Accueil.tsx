@@ -160,7 +160,7 @@ function Accueil() {
           </BlocProjet>
         </Bloc>
 
-        <Bloc name="Curriculum vitæ">
+        <Bloc name="CV">
           <BlocCV name="Curriculum vitæ" cv="CV_LEON_Alexis"/>
         </Bloc>
 
