@@ -49,12 +49,19 @@ h2.secondaire:after {
 }
 
 a {
+  transition: 0.15s ease-in-out;
   text-decoration: none;
   color: inherit;
 }
 
 a:hover {
+  cursor: pointer;
   color: #4BA3C3;
+  filter: invert(53%) sepia(77%) saturate(330%) hue-rotate(150deg) brightness(96%) contrast(84%);
+}
+
+a:active {
+  transform: translateY(1px);
 }
 
 /* Images */
@@ -64,9 +71,13 @@ img {
 
 /* Mobile */
 @media (min-width: 0px) and (max-width: 640px) {
+  body {
+    padding: 1em 0;
+  }
+
   /* Texte */
   h1 {
-    font-size: 30px;
+    font-size: 26px;
   }
 
   h2 {
@@ -104,6 +115,10 @@ img {
 
 /* Tablette */
 @media (min-width: 641px) and (max-width: 1007px) {
+  body {
+    padding: 1em 0;
+  }
+
   /* Texte */
   h1 {
     font-size: 30px;
@@ -148,6 +163,10 @@ img {
 
 /* Petit écran PC */
 @media (min-width: 1008px) and (max-width: 1399px) {
+  body {
+    padding: 1em 0;
+  }
+  
   /* Texte */
   h1 {
     font-size: 30px;
@@ -192,6 +211,10 @@ img {
 
 /* Écran PC */
 @media (min-width: 1400px) {
+  body {
+    padding: 1em 0;
+  }
+
    /* Texte */
    h1 {
     font-size: 30px;

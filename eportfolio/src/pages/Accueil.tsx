@@ -15,6 +15,8 @@ import Projet from "../components/molecules/Projet";
 import BlocProjet from "../components/organisms/BlocProjet";
 import Bloc from "../components/organisms/Bloc";
 import BlocCV from "../components/organisms/BlocCV";
+import BlocContact from "../components/organisms/BlocContacts";
+import Footer from "../components/organisms/Footer";
 
 function Accueil() {
   const [isVoletMenuOpen, setIsVoletMenuOpen] = useState(false);
@@ -59,7 +61,7 @@ function Accueil() {
           </BlocTextImage>
         </Bloc>
 
-        <Bloc name="Présentation" color={true}>
+        <Bloc name="Expériences professionnelles" color={true}>
           <BlocExpPro name="Expériences professionnelles">
             <CardExpPro picture="bg" poste="Nom du poste" entreprise="Nom de l'entreprise" adresse="adresse" date="Date du contrat">
               <h4>Sous-titre</h4>
@@ -161,6 +163,18 @@ function Accueil() {
         <Bloc name="Curriculum vitæ">
           <BlocCV name="Curriculum vitæ" cv="CV_LEON_Alexis"/>
         </Bloc>
+
+        <Bloc name="Contact">
+          <BlocContact 
+            name="Contact" 
+            contacts={[
+              {icon: "mail", lien: "mailto:alexis.leon@etu.u-paris.fr", lienAffiche: "alexis.leon@etu.u-paris.fr"},
+              {icon: "linkedin", lien: "https://www.linkedin.com/in/alexis-leon1/", lienAffiche: "alexis-leon1"},
+              {icon: "discord", lien: "https://discord.com/users/219016239442427905", lienAffiche: "mrdala"}
+            ]}/>
+        </Bloc>
+
+        <Footer text="2023 - Alexis LEON"/>
       </div>
     </>
   );

@@ -1,12 +1,14 @@
 import '../../style/atoms/Line.css';
 
 type Props = {
-  className?: string;
+  color?: boolean;
 };
 
-const Line = ({ className }: Props) => {
+const Line = ({ color }: Props) => {
+  const className = color ? "line color" : "line";
+
   return (
-    <div className={"line " + (className ? className : "")} />
+    <div className={className} />
   );
 };
 

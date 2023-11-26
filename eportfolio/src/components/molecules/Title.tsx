@@ -13,7 +13,7 @@ const Title = ({ titre1, titre2 }: Props) => {
         <h1 className='secondaire'>{titre1}</h1>
         <h1>{titre2}</h1>
       </div>
-      <Line className='color'/>
+      <Line color={true}/>
     </div>
   );
 };
