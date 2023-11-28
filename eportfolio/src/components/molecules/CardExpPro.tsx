@@ -14,7 +14,6 @@ const CardExpPro = ({ img, poste, entreprise, adresse, date, volet }: ExpPro) =>
     setIsOpen(!isOpen);
   };
 
-
   return (
     <>
       <div className='CardExpPro' onClick={toggleVolet}>

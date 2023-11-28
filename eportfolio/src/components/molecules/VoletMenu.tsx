@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 
 import '../../style/molecules/VoletMenu.css';
 import IconButton from '../atoms/IconButton';
+import { toggleVolet } from '../../tools/function';
 
 type Props = {
   isOpen: boolean;
@@ -15,17 +16,7 @@ const VoletMenu = ({ isOpen, toggleVoletMenu, titles }: Props) => {
   const divRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (isOpen && divRef.current && !divRef.current.contains(event.target as Node)) {
-        toggleVoletMenu();
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
+    toggleVolet(isOpen, toggleVoletMenu, divRef);
   }, [isOpen, toggleVoletMenu]);
 
   return (

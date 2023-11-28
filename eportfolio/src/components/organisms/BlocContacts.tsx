@@ -1,5 +1,5 @@
 import '../../style/organisms/BlocContact.css';
-import { rootLogos } from '../../tools/root';
+import { rootIcons } from '../../tools/root';
 import { Contact } from '../Types';
 
 type Props = {
@@ -12,7 +12,7 @@ const BlocContact = ({ contacts }: Props) => {
       {contacts.map((contact, index) => (
         <div key={index}>
           <a href={contact.lien} target="_blank" rel="noreferrer">
-            <img src={rootLogos + contact.icon + ".png"} alt={contact.icon} className='xs'/>
+            <img src={rootIcons + contact.icon + ".png"} alt={contact.icon} className='xs'/>
             <h3>{contact.lienAffiche}</h3>
           </a>
         </div>

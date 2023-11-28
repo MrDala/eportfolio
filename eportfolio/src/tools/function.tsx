@@ -1,11 +1,23 @@
+import { RefObject } from "react";
+
 export function openLink(link : string) : void {
   if (link) {
     window.open(link, '_blank');
   }
 }
 
-export function toggleVolet (isVoletOpen: boolean, setIsVoletOpen: Function) : void {
-  setIsVoletOpen(!isVoletOpen);
+export function toggleVolet (isOpen: boolean, toggleVoletDiv: Function, divRef: RefObject<HTMLDivElement> ) : Function {
+  const handleClickOutside = (event: MouseEvent) => {
+    if (isOpen && divRef.current && !divRef.current.contains(event.target as Node)) {
+      toggleVoletDiv();
+    }
+  };
+
+  document.addEventListener('mousedown', handleClickOutside);
+
+  return () => {
+    document.removeEventListener('mousedown', handleClickOutside);
+  };
 };
   
 export function applyLastRow(HTML_div: HTMLElement, HTML_ElementName: string, elementsPerRawDiplome: number) : void {

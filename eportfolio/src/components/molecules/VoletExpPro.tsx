@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 
 import '../../style/molecules/VoletExpPro.css';
 import IconButton from '../atoms/IconButton';
+import { toggleVolet } from '../../tools/function';
 
 type Props = {
   poste: string,
@@ -18,17 +19,7 @@ const VoletExpPro = ({ poste, entreprise, adresse, date, isOpen, toggleVoletExpP
   const divRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (isOpen && divRef.current && !divRef.current.contains(event.target as Node)) {
-        toggleVoletExpPro();
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
+    toggleVolet(isOpen, toggleVoletExpPro, divRef);
   }, [isOpen, toggleVoletExpPro]);
 
   return (
