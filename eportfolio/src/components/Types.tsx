@@ -1,7 +1,3 @@
-export type Langue = {
-  lang: "fr" | "en"
-}
-
 export type IconButtonProps = {
   name: string;
   className?: string;

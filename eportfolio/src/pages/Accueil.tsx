@@ -4,13 +4,14 @@ import { useTranslation } from "react-i18next";
 import { openLink } from "../tools/function";
 
 import VoletMenu from "../components/molecules/VoletMenu";
+import CardExpPro from "../components/molecules/CardExpPro";
+import CardProjet from "../components/molecules/CardProjet";
+import RawDiplome from "../components/molecules/RawDiplome";
+
 import BlocHeader from "../components/organisms/BlocHeader";
 import BlocTextImage from "../components/organisms/BlocTextImage";
 import BlocExpPro from "../components/organisms/BlocExpPro";
-import CardExpPro from "../components/molecules/CardExpPro";
 import BlocDiplomes from "../components/organisms/BlocTable";
-import RawDiplome from "../components/molecules/RawDiplome";
-import CardProjet from "../components/molecules/CardProjet";
 import BlocProjet from "../components/organisms/BlocProjet";
 import Bloc from "../components/organisms/Bloc";
 import BlocCV from "../components/organisms/BlocCV";
@@ -18,21 +19,30 @@ import BlocContact from "../components/organisms/BlocContacts";
 import BlocFooter from "../components/organisms/BlocFooter";
 
 import i18n from "../tools/i18n";
-import { CV, Contact, Diplome, ExpPro, Footer, Header, Langue, Presentation, Projet } from "../components/Types";
+import { CV, Contact, Diplome, ExpPro, Footer, Header, Presentation, Projet } from "../components/Types";
+import SelectLangue from "../components/atoms/SelectLangue";
+import { Langues } from "../tools/langues";
 
-const Accueil = ({ lang }: Langue) => {
+type Props = {
+  lang: Langues;
+};
+
+const Accueil = ({ lang }: Props) => {
   const [isVoletMenuOpen, setIsVoletMenuOpen] = useState(false);
+  const [langue, setLangue] = useState<Langues>(lang);
+  const { t } = useTranslation();
 
-  /* Volet side bar */
   const toggleVoletMenu = () => {
     setIsVoletMenuOpen(!isVoletMenuOpen);
   };
-
-  const { t } = useTranslation();
+  
+  const changeLangue= (keyLangue: keyof typeof Langues) => {
+    setLangue(Langues[keyLangue]);
+  }
 
   useEffect(() => {
-    i18n.changeLanguage(lang);
-  }, [lang]);
+    i18n.changeLanguage(langue);
+  }, [langue]);
 
   /* Contenu des blocs */
   const header = {
@@ -63,6 +73,11 @@ const Accueil = ({ lang }: Langue) => {
 
   return (
     <>
+      <SelectLangue
+        languesDispos={Object.keys(Langues)}
+        onChange={changeLangue}
+      />
+
       <VoletMenu
         toggleVoletMenu={toggleVoletMenu}
         isOpen={isVoletMenuOpen}
@@ -115,12 +130,12 @@ const Accueil = ({ lang }: Langue) => {
 
         <Bloc name={t("volet.5")}>
           <BlocContact
-            contacts={contacts} 
+            contacts={contacts}
           />
         </Bloc>
 
-        <BlocFooter 
-         {...footer}
+        <BlocFooter
+          {...footer}
         />
       </>
     </>
