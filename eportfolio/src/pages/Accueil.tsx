@@ -17,6 +17,8 @@ import BlocCV from "../components/organisms/BlocCV";
 import BlocContact from "../components/organisms/BlocContacts";
 import Footer from "../components/organisms/Footer";
 
+import i18n from "../tools/i18n";
+
 type Props = {
   lang: 'en' | 'fr';
 }
@@ -29,16 +31,16 @@ const Accueil = ({ lang }: Props) => {
     setIsVoletMenuOpen(!isVoletMenuOpen);
   };
 
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   useEffect(() => {
     i18n.changeLanguage(lang);
-  }, [lang, i18n]);
+  }, [lang]);
 
-
+  /* Contenu des blocs */
   const expPros = [
     {
-      picture: "bg1",
+      picture: "bg",
       poste: t("expPro.0.poste"),
       entreprise: t("expPro.0.entreprise"),
       adresse: t("expPro.0.adresse"),

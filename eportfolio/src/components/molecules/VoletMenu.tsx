@@ -31,7 +31,7 @@ const VoletMenu = ({ isOpen, toggleVoletMenu, titles }: Props) => {
   return (
     <div ref={divRef} className={"VoletMenu " + (isOpen ? 'open' : '')}>
       <IconButton name='close' className='xs' onClick={toggleVoletMenu} />
-      {titles.map((title, index) => (
+      {Array.isArray(titles) && titles.map((title, index) => (
         <h2 key={index}>
           <a href={"#" + title} onClick={toggleVoletMenu}>{title}</a>
         </h2>

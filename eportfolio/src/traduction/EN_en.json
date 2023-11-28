@@ -1,17 +1,17 @@
 {
   "react": {
     "volet": [
-      "Présentation",
-      "Expériences professionnelles",
-      "Diplômes et formations",
-      "Projets",
+      "Presentation",
+      "Professional Experiences",
+      "Degrees and Education",
+      "Projects",
       "CV",
       "Contact"
     ],
 
     "header": {
-      "titre1": "E&#8209;Portfolio",
-      "titre2": "Alexis&#160;LEON"
+      "titre1": "E-Portfolio",
+      "titre2": "Alexis LEON"
     },
 
     "presentation": {
@@ -20,44 +20,43 @@
 
     "expPro": [
       {
-        "poste": "Nom du poste",
-        "entreprise": "Nom de l'entreprise",
-        "adresse": "adresse",
-        "date": "date du contrat",
-        "volet": {
-          "h4": "Sous-titre",
-          "texte": "Cette partie est modifiable selon le besoin. Adapter le bloc correspondant en conséquence."
-        }
+        "poste": "Position Title",
+        "entreprise": "Company Name",
+        "adresse": "address",
+        "date": "Contract Date",
+        "volet": "<h4>Subtitle</h4><p>This part is customizable as needed. Adapt the corresponding block accordingly.</p>"
       }
     ],
     
     "diplome": {
       "col": [
-        "Diplôme",
-        "Année",
-        "Établissement",
-        "Lien"
+        "Diploma",
+        "Year",
+        "Institution",
+        "Link"
       ],
       "raw": [
         {
-          "nom": "Licence MIAGE",
+          "nom": "MIAGE Degree",
           "date": "2023",
-          "img": "Université Paris Cité"
+          "img": "University Paris City"
         }
       ]
     },
 
     "projet": [
       {
-        "nom": "Nom du projet",
+        "nom": "Project Name",
         "date": "2023",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "git": "Source Code",
+        "web": "Link"
       }
     ],
 
     "cv" : {
-      "telecharger": "Télécharger le CV",
-      "web": "Consulter en ligne"
+      "telecharger": "Download CV",
+      "web": "View Online"
     }
   }
 }

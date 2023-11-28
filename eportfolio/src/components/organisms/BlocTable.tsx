@@ -13,7 +13,7 @@ const BlocTable = ({ heads, name, children }: Props) => {
       <table>
         <thead>
           <tr>
-            {heads.map((head, index) => (
+            {Array.isArray(heads) && heads.map((head, index) => (
               <th key={index}>
                 <h3>
                   {head}

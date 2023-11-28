@@ -1,14 +1,14 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
-// Importez les fichiers de traduction
+// Import language files
 import fr from '../traduction/FR_fr.json';
 import en from '../traduction/EN_en.json';
 
-// Définissez les ressources avec les traductions
+// Define resources with translations
 const resources = { fr, en };
 
-// Initialisez i18n avec les paramètres nécessaires
+// Initialize i18n with necessary parameters
 i18n
   .use(initReactI18next)
   .init({
@@ -17,7 +17,7 @@ i18n
     fallbackLng: 'en',
     debug: false,
     defaultNS: 'react',
-    keySeparator: ".",
+    keySeparator: '.',
     interpolation: {
       escapeValue: false,
     },
