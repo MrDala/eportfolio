@@ -1,10 +1,10 @@
 import '../../style/organisms/BlocTable.css';
-import Raw from '../molecules/Raw';
+import RawDiplome from '../molecules/RawDiplome';
 
 type Props = {
   name: string,
   heads: string[];
-  children?: React.ReactElement<typeof Raw> | React.ReactElement<typeof Raw>[];
+  children?: React.ReactElement<typeof RawDiplome> | React.ReactElement<typeof RawDiplome>[];
 };
 
 const BlocTable = ({ heads, name, children }: Props) => {

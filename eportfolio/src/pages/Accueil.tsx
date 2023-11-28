@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import { openLink } from "../tools/function";
 
@@ -8,9 +9,7 @@ import BlocTextImage from "../components/organisms/BlocTextImage";
 import BlocExpPro from "../components/organisms/BlocExpPro";
 import CardExpPro from "../components/molecules/CardExpPro";
 import BlocDiplomes from "../components/organisms/BlocTable";
-import Raw from "../components/molecules/Raw";
-import Button from "../components/atoms/Button";
-import ImageText from "../components/atoms/ImageText";
+import RawDiplome from "../components/molecules/RawDiplome";
 import Projet from "../components/molecules/Projet";
 import BlocProjet from "../components/organisms/BlocProjet";
 import Bloc from "../components/organisms/Bloc";
@@ -18,7 +17,11 @@ import BlocCV from "../components/organisms/BlocCV";
 import BlocContact from "../components/organisms/BlocContacts";
 import Footer from "../components/organisms/Footer";
 
-function Accueil() {
+type Props = {
+  lang: 'en' | 'fr';
+}
+
+const Accueil = ({ lang }: Props) => {
   const [isVoletMenuOpen, setIsVoletMenuOpen] = useState(false);
 
   /* Volet side bar */
@@ -26,20 +29,71 @@ function Accueil() {
     setIsVoletMenuOpen(!isVoletMenuOpen);
   };
 
+  const { t, i18n } = useTranslation();
+
+  useEffect(() => {
+    i18n.changeLanguage(lang);
+  }, [lang, i18n]);
+
+
+  const expPros = [
+    {
+      picture: "bg1",
+      poste: t("expPro.0.poste"),
+      entreprise: t("expPro.0.entreprise"),
+      adresse: t("expPro.0.adresse"),
+      date: t("expPro.0.date"),
+      volet: t("expPro.0.volet")
+    }
+  ];
+
+  const diplomes = [
+    {
+      nom: t("diplome.raw.0.nom"),
+      date: t("diplome.raw.0.date"),
+      img: {
+        src: "UniversiteParisCite",
+        texte: t("diplome.raw.0.img")
+      },
+      lien: "./"
+    }
+  ];
+
+  const projets = [
+    {
+      name: t("projet.0.nom"),
+      date: t("projet.0.date"),
+      description: t("projet.0.description"),
+      urlGit: {
+        bouton: t("projet.0.git"),
+        url: 'https://github.com/projet1',
+      },
+      urlProjet: {
+        bouton: t("projet.0.web"),
+        url: 'https://projet1.com',
+      },
+      logos: ["JavaScript", 'PHP'],
+    }
+  ];
+
+  const contacts = [
+    { icon: "mail", lien: "mailto:alexis.leon@etu.u-paris.fr", lienAffiche: "alexis.leon@etu.u-paris.fr" },
+    { icon: "linkedin", lien: "https://www.linkedin.com/in/alexis-leon1/", lienAffiche: "alexis-leon1" },
+    { icon: "discord", lien: "https://discord.com/users/219016239442427905", lienAffiche: "mrdala" }
+  ]
+
   return (
     <>
-      <div>
-        <VoletMenu
-          toggleVoletMenu={toggleVoletMenu}
-          isOpen={isVoletMenuOpen}
-          titles={["Présentation", "Expériences professionnelles", "Diplômes et formations", "Projets", "CV", "Contact"]}
-        />
-      </div>
+      <VoletMenu
+        toggleVoletMenu={toggleVoletMenu}
+        isOpen={isVoletMenuOpen}
+        titles={t("volet", { returnObjects: true })}
+      />
 
-      <div>
+      <>
         <Header
-          titre1='E&#8209;Portfolio'
-          titre2='Alexis&#160;LEON'
+          titre1={t("header.titre1")}
+          titre2={t("header.titre2")}
           icon1={{
             className: 'xs',
             name: 'list',
@@ -55,127 +109,64 @@ function Accueil() {
           }}
         />
 
-        <Bloc name="Présentation">
-          <BlocTextImage name="Présentation" picture="bg">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </BlocTextImage>
+        <Bloc name={t("volet.0")}>
+          <BlocTextImage
+            name={t("volet.0")}
+            picture="bg"
+            text={t("presentation.texte")}
+          />
         </Bloc>
 
-        <Bloc name="Expériences professionnelles" color={true}>
-          <BlocExpPro name="Expériences professionnelles">
-            <CardExpPro picture="bg" poste="Nom du poste" entreprise="Nom de l'entreprise" adresse="adresse" date="Date du contrat">
-              <h4>Sous-titre</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus eget nunc scelerisque viverra mauris. Laoreet sit amet cursus sit. Sem fringilla ut morbi tincidunt augue interdum velit. Facilisis leo vel fringilla est ullamcorper eget nulla. Sapien nec sagittis aliquam malesuada bibendum arcu vitae. Amet nulla facilisi morbi tempus iaculis urna id volutpat. Tellus integer feugiat scelerisque varius. Dictum varius duis at consectetur. Pellentesque habitant morbi tristique senectus et netus et. Libero id faucibus nisl tincidunt eget nullam. Id faucibus nisl tincidunt eget nullam. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi. Odio ut enim blandit volutpat maecenas volutpat. Tristique et egestas quis ipsum suspendisse. Sit amet consectetur adipiscing elit ut aliquam purus sit. Vel eros donec ac odio. Suspendisse interdum consectetur libero id faucibus nisl tincidunt eget nullam.</p>
-            </CardExpPro>
-            <CardExpPro picture="bg" poste="Nom du poste" entreprise="Nom de l'entreprise" adresse="adresse" date="Date du contrat">
-              <h4>Sous-titre</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus eget nunc scelerisque viverra mauris. Laoreet sit amet cursus sit. Sem fringilla ut morbi tincidunt augue interdum velit. Facilisis leo vel fringilla est ullamcorper eget nulla. Sapien nec sagittis aliquam malesuada bibendum arcu vitae. Amet nulla facilisi morbi tempus iaculis urna id volutpat. Tellus integer feugiat scelerisque varius. Dictum varius duis at consectetur. Pellentesque habitant morbi tristique senectus et netus et. Libero id faucibus nisl tincidunt eget nullam. Id faucibus nisl tincidunt eget nullam. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi. Odio ut enim blandit volutpat maecenas volutpat. Tristique et egestas quis ipsum suspendisse. Sit amet consectetur adipiscing elit ut aliquam purus sit. Vel eros donec ac odio. Suspendisse interdum consectetur libero id faucibus nisl tincidunt eget nullam.</p>
-            </CardExpPro>
-            <CardExpPro picture="bg" poste="Nom du poste" entreprise="Nom de l'entreprise" adresse="adresse" date="Date du contrat">
-              <h4>Sous-titre</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus eget nunc scelerisque viverra mauris. Laoreet sit amet cursus sit. Sem fringilla ut morbi tincidunt augue interdum velit. Facilisis leo vel fringilla est ullamcorper eget nulla. Sapien nec sagittis aliquam malesuada bibendum arcu vitae. Amet nulla facilisi morbi tempus iaculis urna id volutpat. Tellus integer feugiat scelerisque varius. Dictum varius duis at consectetur. Pellentesque habitant morbi tristique senectus et netus et. Libero id faucibus nisl tincidunt eget nullam. Id faucibus nisl tincidunt eget nullam. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi. Odio ut enim blandit volutpat maecenas volutpat. Tristique et egestas quis ipsum suspendisse. Sit amet consectetur adipiscing elit ut aliquam purus sit. Vel eros donec ac odio. Suspendisse interdum consectetur libero id faucibus nisl tincidunt eget nullam.</p>
-            </CardExpPro>
-            <CardExpPro picture="bg" poste="Nom du poste" entreprise="Nom de l'entreprise" adresse="adresse" date="Date du contrat">
-              <h4>Sous-titre</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus eget nunc scelerisque viverra mauris. Laoreet sit amet cursus sit. Sem fringilla ut morbi tincidunt augue interdum velit. Facilisis leo vel fringilla est ullamcorper eget nulla. Sapien nec sagittis aliquam malesuada bibendum arcu vitae. Amet nulla facilisi morbi tempus iaculis urna id volutpat. Tellus integer feugiat scelerisque varius. Dictum varius duis at consectetur. Pellentesque habitant morbi tristique senectus et netus et. Libero id faucibus nisl tincidunt eget nullam. Id faucibus nisl tincidunt eget nullam. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi. Odio ut enim blandit volutpat maecenas volutpat. Tristique et egestas quis ipsum suspendisse. Sit amet consectetur adipiscing elit ut aliquam purus sit. Vel eros donec ac odio. Suspendisse interdum consectetur libero id faucibus nisl tincidunt eget nullam.</p>
-            </CardExpPro>
-            <CardExpPro picture="bg" poste="Nom du poste" entreprise="Nom de l'entreprise" adresse="adresse" date="Date du contrat">
-              <h4>Sous-titre</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus eget nunc scelerisque viverra mauris. Laoreet sit amet cursus sit. Sem fringilla ut morbi tincidunt augue interdum velit. Facilisis leo vel fringilla est ullamcorper eget nulla. Sapien nec sagittis aliquam malesuada bibendum arcu vitae. Amet nulla facilisi morbi tempus iaculis urna id volutpat. Tellus integer feugiat scelerisque varius. Dictum varius duis at consectetur. Pellentesque habitant morbi tristique senectus et netus et. Libero id faucibus nisl tincidunt eget nullam. Id faucibus nisl tincidunt eget nullam. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi. Odio ut enim blandit volutpat maecenas volutpat. Tristique et egestas quis ipsum suspendisse. Sit amet consectetur adipiscing elit ut aliquam purus sit. Vel eros donec ac odio. Suspendisse interdum consectetur libero id faucibus nisl tincidunt eget nullam.</p>
-            </CardExpPro>
-            <CardExpPro picture="bg" poste="Nom du poste" entreprise="Nom de l'entreprise" adresse="adresse" date="Date du contrat">
-              <h4>Sous-titre</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus eget nunc scelerisque viverra mauris. Laoreet sit amet cursus sit. Sem fringilla ut morbi tincidunt augue interdum velit. Facilisis leo vel fringilla est ullamcorper eget nulla. Sapien nec sagittis aliquam malesuada bibendum arcu vitae. Amet nulla facilisi morbi tempus iaculis urna id volutpat. Tellus integer feugiat scelerisque varius. Dictum varius duis at consectetur. Pellentesque habitant morbi tristique senectus et netus et. Libero id faucibus nisl tincidunt eget nullam. Id faucibus nisl tincidunt eget nullam. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi. Odio ut enim blandit volutpat maecenas volutpat. Tristique et egestas quis ipsum suspendisse. Sit amet consectetur adipiscing elit ut aliquam purus sit. Vel eros donec ac odio. Suspendisse interdum consectetur libero id faucibus nisl tincidunt eget nullam.</p>
-            </CardExpPro>
+        <Bloc name={t("volet.1")} color={true}>
+          <BlocExpPro name={t("volet.1")}>
+            {expPros.map((expPro, index) => (
+              <CardExpPro
+                key={index}
+                picture={expPro.picture}
+                poste={expPro.poste}
+                entreprise={expPro.entreprise}
+                adresse={expPro.adresse}
+                date={expPro.date}
+              >
+                <div dangerouslySetInnerHTML={{ __html: expPro.volet }}/>
+              </CardExpPro>
+            ))}
           </BlocExpPro>
         </Bloc>
 
-        <Bloc name="Diplômes et formations">
-          <BlocDiplomes name="Diplômes et formations" heads={["Diplôme", "Année", "Établissement", "Lien"]}>
-            <Raw args={[
-              <p className="big">Nom du diplôme</p>,
-              <p className="big">2018</p>,
-              <ImageText className="xs" nameImage="UniversiteParisCite" text="Université Paris Cité" />,
-              <Button text="infos" className="xs" />]}
-            />
-            <Raw args={[
-              <p className="big">Nom du diplôme</p>,
-              <p className="big">2018</p>,
-              <ImageText className="xs" nameImage="UniversiteParisCite" text="Université Paris Cité" />,
-              <Button text="infos" className="xs" />]}
-            />
+        <Bloc name={t("volet.2")}>
+          <BlocDiplomes name={t("volet.2")} heads={t("diplome.col", { returnObjects: true })}>
+            {diplomes.map((diplome, index) => (
+              <RawDiplome key={index} {...diplome} />
+            ))}
           </BlocDiplomes>
         </Bloc>
 
-        <Bloc name="Projets" color={true}>
-          <BlocProjet name="Projets">
-            <Projet
-              name="Nom du projet"
-              date="2023"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
-              urlGit="./"
-              urlProjet="./"
-              logos={["JavaScript", "JavaScript", "JavaScript"]}
-            />
-            <Projet
-              name="Nom du projet"
-              date="2023"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
-              urlGit="./"
-              urlProjet="./"
-              logos={["JavaScript", "JavaScript", "JavaScript"]}
-            />
-            <Projet
-              name="Nom du projet"
-              date="2023"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
-              urlGit="./"
-              urlProjet="./"
-              logos={["JavaScript", "JavaScript", "JavaScript"]}
-            />
-            <Projet
-              name="Nom du projet"
-              date="2023"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
-              urlGit="./"
-              urlProjet="./"
-              logos={["JavaScript", "JavaScript", "JavaScript"]}
-            />
-            <Projet
-              name="Nom du projet"
-              date="2023"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
-              urlGit="./"
-              urlProjet="./"
-              logos={["JavaScript", "JavaScript", "JavaScript"]}
-            />
-            <Projet
-              name="Nom du projet"
-              date="2023"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
-              urlGit="./"
-              urlProjet="./"
-              logos={["JavaScript", "JavaScript", "JavaScript"]}
-            />
+        <Bloc name={t("volet.3")} color={true}>
+          <BlocProjet name={t("volet.3")}>
+            {projets.map((projet, index) => (
+              <Projet key={index} {...projet} />
+            ))}
           </BlocProjet>
         </Bloc>
 
-        <Bloc name="CV">
-          <BlocCV name="Curriculum vitæ" cv="CV_LEON_Alexis"/>
+        <Bloc name={t("volet.4")}>
+          <BlocCV
+            name={"Curriculum vitæ"}
+            cv="CV_LEON_Alexis"
+            telecharger={t("cv.telecharger")}
+            web={t("cv.web")}
+          />
         </Bloc>
 
-        <Bloc name="Contact">
-          <BlocContact 
-            name="Contact" 
-            contacts={[
-              {icon: "mail", lien: "mailto:alexis.leon@etu.u-paris.fr", lienAffiche: "alexis.leon@etu.u-paris.fr"},
-              {icon: "linkedin", lien: "https://www.linkedin.com/in/alexis-leon1/", lienAffiche: "alexis-leon1"},
-              {icon: "discord", lien: "https://discord.com/users/219016239442427905", lienAffiche: "mrdala"}
-            ]}/>
+        <Bloc name={t("volet.5")}>
+          <BlocContact
+            name={t("volet.5")}
+            contacts={contacts} />
         </Bloc>
 
-        <Footer text="2023 - Alexis LEON"/>
-      </div>
+        <Footer text="2023 - Alexis LEON" />
+      </>
     </>
   );
 }

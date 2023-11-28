@@ -6,8 +6,14 @@ type Props = {
   name: string,
   date: string,
   description: string,
-  urlGit?: string,
-  urlProjet?: string,
+  urlGit?: {
+    bouton: string,
+    url: string
+  },
+  urlProjet?: {
+    bouton: string,
+    url: string
+  },
   logos?: string[]
 };
 
@@ -20,8 +26,8 @@ const Projet = ({ name, date, description, urlGit, urlProjet, logos }: Props) =>
         <h3>{name}</h3>
         <p className='date'>{date}</p>
         <p className='description'>{description}</p>
-        {urlGit && <Button text='Code Source' onClick={() => openLink(urlGit)} className='secondaire' />}
-        {urlProjet && <Button text='Lien' onClick={() => openLink(urlProjet)} className='plein'/>}
+        {urlGit && <Button text={urlGit.bouton} onClick={() => openLink(urlGit.url)} className='secondaire' />}
+        {urlProjet && <Button text={urlProjet.bouton} onClick={() => openLink(urlProjet.url)} className='plein'/>}
       </div>
       <div className='col2'>
         {logos ? logos.map((logo, index) => (

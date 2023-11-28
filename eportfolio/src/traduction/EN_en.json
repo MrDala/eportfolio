@@ -1,0 +1,63 @@
+{
+  "react": {
+    "volet": [
+      "Présentation",
+      "Expériences professionnelles",
+      "Diplômes et formations",
+      "Projets",
+      "CV",
+      "Contact"
+    ],
+
+    "header": {
+      "titre1": "E&#8209;Portfolio",
+      "titre2": "Alexis&#160;LEON"
+    },
+
+    "presentation": {
+      "texte": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+
+    "expPro": [
+      {
+        "poste": "Nom du poste",
+        "entreprise": "Nom de l'entreprise",
+        "adresse": "adresse",
+        "date": "date du contrat",
+        "volet": {
+          "h4": "Sous-titre",
+          "texte": "Cette partie est modifiable selon le besoin. Adapter le bloc correspondant en conséquence."
+        }
+      }
+    ],
+    
+    "diplome": {
+      "col": [
+        "Diplôme",
+        "Année",
+        "Établissement",
+        "Lien"
+      ],
+      "raw": [
+        {
+          "nom": "Licence MIAGE",
+          "date": "2023",
+          "img": "Université Paris Cité"
+        }
+      ]
+    },
+
+    "projet": [
+      {
+        "nom": "Nom du projet",
+        "date": "2023",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+      }
+    ],
+
+    "cv" : {
+      "telecharger": "Télécharger le CV",
+      "web": "Consulter en ligne"
+    }
+  }
+}

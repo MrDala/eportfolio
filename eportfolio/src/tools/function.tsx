@@ -4,14 +4,14 @@ export function openLink(link : string) : void {
   }
 }
   
-export function applyLastRow(HTML_div: HTMLElement, HTML_ElementName: string, elementsPerRaw: number) : void {
+export function applyLastRow(HTML_div: HTMLElement, HTML_ElementName: string, elementsPerRawDiplome: number) : void {
   const HTML_Elements = HTML_div.querySelectorAll(HTML_ElementName);
   HTML_Elements.forEach((element) => {
     element.classList.remove('last-row');
   });
   
   // Calcule le nombre d'éléments dans la dernière ligne
-  const elementsInLastRow = HTML_Elements.length % elementsPerRaw || elementsPerRaw;
+  const elementsInLastRow = HTML_Elements.length % elementsPerRawDiplome || elementsPerRawDiplome;
 
   // Retire la bordure basse pour les éléments de la dernière ligne
   for (let i = 1; i <= elementsInLastRow; i++) {

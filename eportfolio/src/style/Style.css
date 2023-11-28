@@ -66,6 +66,10 @@ a:active {
 
 /* Images */
 img {
+  object-fit: contain;
+}
+
+img.xl{
   object-fit: cover;
 }
 

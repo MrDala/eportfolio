@@ -4,18 +4,20 @@ import Button from '../atoms/Button';
 
 type Props = {
   name: string,
-  cv: string
+  cv: string,
+  telecharger: string,
+  web: string
 };
 
-const BlocCV = ({ name, cv }: Props) => {
+const BlocCV = ({ name, cv, telecharger, web }: Props) => {
   const root = "./ressources/icons/";
   const cvRoot = "ressources/pdf/"
 
   return (
     <div className='BlocCV' id={name}>
       <div>
-        <img src={root + "cv.png"} alt='Télécharger le CV'/>
-        <Button className='plein' text='Télécharger le CV' onClick={() => downloadFile(cvRoot + cv + ".pdf")}/>
+        <img src={root + "cv.png"} alt={telecharger}/>
+        <Button className='plein' text={telecharger} onClick={() => downloadFile(cvRoot + cv + ".pdf")}/>
       </div>
       <div className='separator'>
         <span/>
@@ -23,8 +25,8 @@ const BlocCV = ({ name, cv }: Props) => {
         <span/>
       </div>
       <div>
-      <img src={root + "web.png"} alt='Consulter en ligne'/>
-        <Button className='plein' text='Consulter en ligne' onClick={() => openLink(cvRoot + cv + ".pdf")}/>
+      <img src={root + "web.png"} alt={web}/>
+        <Button className='plein' text={web} onClick={() => openLink(cvRoot + cv + ".pdf")}/>
       </div>
     </div>
   );
