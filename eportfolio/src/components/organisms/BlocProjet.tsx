@@ -1,17 +1,17 @@
-import { useEffect, useState } from 'react';
+import React, { createRef, useEffect, useState } from 'react';
 
 import '../../style/organisms/BlocProjet.css';
-import Projet from '../molecules/Projet';
+import Projet from '../molecules/CardProjet';
 import { applyLastRow } from '../../tools/function';
 
 type Props = {
-  name: string,
   children?: React.ReactElement<typeof Projet> | React.ReactElement<typeof Projet>[];
 };
 
-const BlocProjet = ({ name, children }: Props) => {
+const BlocProjet = ({ children }: Props) => {
   const [elementPerRow, setElementsPerRow] = useState(0);
-
+  const projetContainer = createRef<HTMLDivElement>(); 
+  
   const calculateElementsPerRow = () => {
     if (window.innerWidth < 641) {
       setElementsPerRow(1);
@@ -39,15 +39,13 @@ const BlocProjet = ({ name, children }: Props) => {
   }, []);
 
   useEffect(() => {
-    const projetContainer = document.getElementById(name);
-
-    if (projetContainer) {
-      applyLastRow(projetContainer, '.Projet', elementPerRow);
+    if (projetContainer.current) {
+      applyLastRow(projetContainer.current, '.CardProjet', elementPerRow);
     }
-  }, [elementPerRow, name]);
+  }, [elementPerRow, projetContainer]);
 
   return (
-    <div className='BlocProjet' id={name}>
+    <div className='BlocProjet' ref={projetContainer}>
       {children}
     </div>
   );

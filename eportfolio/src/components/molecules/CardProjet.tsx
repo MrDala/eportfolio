@@ -1,27 +1,13 @@
-import '../../style/molecules/Projet.css';
+import '../../style/molecules/CardProjet.css';
 import { openLink } from '../../tools/function';
+import { rootLogos } from '../../tools/root';
+import { Projet } from '../Types';
 import Button from '../atoms/Button';
 
-type Props = {
-  name: string,
-  date: string,
-  description: string,
-  urlGit?: {
-    bouton: string,
-    url: string
-  },
-  urlProjet?: {
-    bouton: string,
-    url: string
-  },
-  logos?: string[]
-};
-
-const Projet = ({ name, date, description, urlGit, urlProjet, logos }: Props) => {
-  const root = "./ressources/logos/";
+const CardProjet = ({ name, date, description, urlGit, urlProjet, logos }: Projet) => {
 
   return (
-    <div className='Projet'>
+    <div className='CardProjet'>
       <div className='col1'>
         <h3>{name}</h3>
         <p className='date'>{date}</p>
@@ -31,11 +17,11 @@ const Projet = ({ name, date, description, urlGit, urlProjet, logos }: Props) =>
       </div>
       <div className='col2'>
         {logos ? logos.map((logo, index) => (
-          <img src={root + logo + ".png"} alt={"logo" + {index}} key={index} className='xs' />
+          <img src={rootLogos + logo + ".png"} alt={"logo" + {index}} key={index} className='xs' />
         )) : null}
       </div>
     </div>
   );
 };
 
-export default Projet;
+export default CardProjet;

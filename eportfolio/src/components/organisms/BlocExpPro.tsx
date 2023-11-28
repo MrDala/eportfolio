@@ -6,9 +6,9 @@ type Props = {
   children?: React.ReactElement<typeof CardExpPro> | React.ReactElement<typeof CardExpPro>[];
 };
 
-const BlocExpPro = ({ name, children }: Props) => {
+const BlocExpPro = ({ children }: Props) => {
   return (
-    <div className='BlocExpPro' id={name}>
+    <div className='BlocExpPro'>
       {children}
     </div>
   );

@@ -1,32 +1,34 @@
 import '../../style/organisms/BlocCV.css';
 import { downloadFile, openLink } from '../../tools/function';
+import { rootIcons, rootPdf } from '../../tools/root';
+import { CV } from '../Types';
 import Button from '../atoms/Button';
 
-type Props = {
-  name: string,
-  cv: string,
-  telecharger: string,
-  web: string
-};
-
-const BlocCV = ({ name, cv, telecharger, web }: Props) => {
-  const root = "./ressources/icons/";
-  const cvRoot = "ressources/pdf/"
+const BlocCV = ({
+  fichier: {
+    nom,
+    src
+  },
+  bouton: {
+    telecharger,
+    web
+  }
+}: CV) => {
 
   return (
-    <div className='BlocCV' id={name}>
+    <div className='BlocCV'>
       <div>
-        <img src={root + "cv.png"} alt={telecharger}/>
-        <Button className='plein' text={telecharger} onClick={() => downloadFile(cvRoot + cv + ".pdf")}/>
+        <img src={rootIcons + "cv.png"} alt={telecharger} />
+        <Button className='plein' text={telecharger} onClick={() => downloadFile(rootPdf + src + ".pdf", nom)} />
       </div>
       <div className='separator'>
-        <span/>
+        <span />
         <h3>ou</h3>
-        <span/>
+        <span />
       </div>
       <div>
-      <img src={root + "web.png"} alt={web}/>
-        <Button className='plein' text={web} onClick={() => openLink(cvRoot + cv + ".pdf")}/>
+        <img src={rootIcons + "web.png"} alt={web} />
+        <Button className='plein' text={web} onClick={() => openLink(rootPdf + src + ".pdf")} />
       </div>
     </div>
   );

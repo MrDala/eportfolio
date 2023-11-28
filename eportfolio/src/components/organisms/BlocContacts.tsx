@@ -1,23 +1,18 @@
 import '../../style/organisms/BlocContact.css';
+import { rootLogos } from '../../tools/root';
+import { Contact } from '../Types';
 
 type Props = {
-  name: string;
-  contacts: {
-    icon: string,
-    lien: string
-    lienAffiche: string
-  }[]
+  contacts: Contact[]
 };
 
-const BlocContact = ({ name, contacts }: Props) => {
-  const root = "./ressources/icons/";
-
+const BlocContact = ({ contacts }: Props) => {
   return (
-    <div className="BlocContact" id={name}>
+    <div className="BlocContact">
       {contacts.map((contact, index) => (
         <div key={index}>
           <a href={contact.lien} target="_blank" rel="noreferrer">
-            <img src={root + contact.icon + ".png"} alt={contact.icon} className='xs'/>
+            <img src={rootLogos + contact.icon + ".png"} alt={contact.icon} className='xs'/>
             <h3>{contact.lienAffiche}</h3>
           </a>
         </div>

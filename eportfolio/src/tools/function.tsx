@@ -3,11 +3,26 @@ export function openLink(link : string) : void {
     window.open(link, '_blank');
   }
 }
+
+export function toggleVolet (isVoletOpen: boolean, setIsVoletOpen: Function) : void {
+  setIsVoletOpen(!isVoletOpen);
+};
   
 export function applyLastRow(HTML_div: HTMLElement, HTML_ElementName: string, elementsPerRawDiplome: number) : void {
+  if (!HTML_div) {
+    return;
+  }
+
   const HTML_Elements = HTML_div.querySelectorAll(HTML_ElementName);
+
+  if (!HTML_Elements || HTML_Elements.length === 0) {
+    return;
+  }
+  
   HTML_Elements.forEach((element) => {
-    element.classList.remove('last-row');
+    if (element.classList) {
+      element.classList.remove('last-row');
+    }
   });
   
   // Calcule le nombre d'éléments dans la dernière ligne
@@ -15,18 +30,21 @@ export function applyLastRow(HTML_div: HTMLElement, HTML_ElementName: string, el
 
   // Retire la bordure basse pour les éléments de la dernière ligne
   for (let i = 1; i <= elementsInLastRow; i++) {
-    HTML_Elements[HTML_Elements.length - i].classList.add('last-row');
+    const lastRowElement = HTML_Elements[HTML_Elements.length - i];
+    if (lastRowElement && lastRowElement.classList) {
+      lastRowElement.classList.add('last-row');
+    }
   }
 }
 
-export function downloadFile(src: string): void {
+export function downloadFile(src: string, nomFichier: string): void {
   if (!src) {
     console.error('Le chemin du fichier est vide.');
     return;
   }
 
   const link = document.createElement('a');
-  link.download = 'CV_Alexis_LEON';
+  link.download = nomFichier;
   link.href = src;
   link.target="_blank";
   link.rel="noreferrer";

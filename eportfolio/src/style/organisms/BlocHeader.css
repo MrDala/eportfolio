@@ -1,86 +1,86 @@
 /* Commun */
-.Header {
+.BlocHeader {
   display: flex;
   justify-content: center;
 }
 
-.Header .col1, .Header .col3 {
+.BlocHeader .col1, .BlocHeader .col3 {
   display: flex;
   align-items: center;
 }
 
-.Header .col3 {
+.BlocHeader .col3 {
   justify-content: end;
 }
 
 
 /* Mobile */
 @media (min-width: 0px) and (max-width: 640px) {
-  .Header {
+  .BlocHeader {
     margin: 0 50px 20px 50px;
   }
 
-  .Header .col1, .Header .col3 {
+  .BlocHeader .col1, .BlocHeader .col3 {
     display: none;
   }
 }
 
 /* Tablette */
 @media (min-width: 641px) and (max-width: 1007px) {
-  .Header {
+  .BlocHeader {
     margin: 0 80px 20px 80px;
   }
 
-  .Header .col1, .Header .col3 {
+  .BlocHeader .col1, .BlocHeader .col3 {
     display: flex;
     width: 20%;
   }
 
-  .Header .col2 {
+  .BlocHeader .col2 {
     width: 80%;
   }
 
-  .Header .col3 {
+  .BlocHeader .col3 {
     gap: 10px;
   }
 }
 
 /* Petit écran PC */
 @media (min-width: 1008px) and (max-width: 1399px) {
-  .Header {
+  .BlocHeader {
     margin: 0 80px 30px 80px;
   }
 
-  .Header .col1, .Header .col3 {
+  .BlocHeader .col1, .BlocHeader .col3 {
     display: flex;
     width: 20%;
   }
 
-  .Header .col2 {
+  .BlocHeader .col2 {
     width: 80%;
   }
 
-  .Header .col3 {
+  .BlocHeader .col3 {
     gap: 10px;
   }
 }
 
 /* Écran PC */
 @media (min-width: 1400px) {
-  .Header {
+  .BlocHeader {
     margin: 0 10% 30px 10%;
   }
 
-  .Header .col1, .Header .col3 {
+  .BlocHeader .col1, .BlocHeader .col3 {
     display: flex;
     width: 20%;
   }
 
-  .Header .col2 {
+  .BlocHeader .col2 {
     width: 80%;
   }
 
-  .Header .col3 {
+  .BlocHeader .col3 {
     gap: 15px;
   }
 }

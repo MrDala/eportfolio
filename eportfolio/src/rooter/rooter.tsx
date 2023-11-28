@@ -4,10 +4,10 @@ import Accueil from "../pages/Accueil";
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <Accueil lang="en"/>
+    element: <Accueil lang="fr"/>
   },
   {
     path: "/accueil",
-    element: <Accueil lang="en"/>
+    element: <Accueil lang="fr"/>
   }
 ]);

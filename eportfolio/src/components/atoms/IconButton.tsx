@@ -1,4 +1,5 @@
 import '../../style/atoms/IconButton.css';
+import { rootIcons } from '../../tools/root';
 import { IconButtonProps } from '../Types';
 
 const IconButton = ({
@@ -6,12 +7,11 @@ const IconButton = ({
   name,
   onClick,
 }: IconButtonProps) => {
-  const root = "./ressources/icons/";
 
   return (
     <img
       className={"icon " + (className ? className : "")}
-      src={root + name + '.png'}
+      src={rootIcons + name + '.png'}
       alt={name}
       onClick={onClick ? () => onClick() : undefined}
     />

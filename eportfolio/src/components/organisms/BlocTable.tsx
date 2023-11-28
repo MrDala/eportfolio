@@ -2,14 +2,13 @@ import '../../style/organisms/BlocTable.css';
 import RawDiplome from '../molecules/RawDiplome';
 
 type Props = {
-  name: string,
   heads: string[];
   children?: React.ReactElement<typeof RawDiplome> | React.ReactElement<typeof RawDiplome>[];
 };
 
-const BlocTable = ({ heads, name, children }: Props) => {
+const BlocTable = ({ heads, children }: Props) => {
   return (
-    <div className='BlocTable' id={name}>
+    <div className='BlocTable'>
       <table>
         <thead>
           <tr>

@@ -1,21 +1,15 @@
 import '../../style/organisms/BlocTextImage.css';
+import { rootImages } from '../../tools/root';
+import { Presentation } from '../Types';
 
-type Props = {
-  name: string,
-  text: string
-  picture: string
-};
-
-const BlocTextImage = ({ name, text, picture }: Props) => {
-  const root = "./ressources/images/";
-
+const BlocTextImage = ({ texte, img }: Presentation) => {
   return (
-    <div className='BlocTextImage' id={name}>
+    <div className='BlocTextImage'>
       <div className='col1'>
-        <p>{text}</p>
+        <p>{texte}</p>
       </div>
       <div className='col2'>
-        <img className='xl' src={root + picture + ".png"} alt={picture} />
+        <img className='xl' src={rootImages + img + ".png"} alt={img} />
       </div>
     </div>
   );

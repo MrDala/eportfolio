@@ -6,13 +6,12 @@ type Props = {
   text: string,
 }
 const ImageText = ({ className, nameImage, text }: Props) => {
-  const root = "./ressources/logos/";
 
   return (
     <span className="ImageText">
       <img
         className={(className ? className : "")}
-        src={root + nameImage + '.png'}
+        src={nameImage + '.png'}
         alt={nameImage}
       />
       <p className='big'>{text}</p>

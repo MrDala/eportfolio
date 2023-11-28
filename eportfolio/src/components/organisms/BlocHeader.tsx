@@ -1,4 +1,4 @@
-import '../../style/organisms/Header.css';
+import '../../style/organisms/BlocHeader.css';
 import IconButton from '../atoms/IconButton';
 import Title from '../molecules/Title';
 import { IconButtonProps } from '../Types';
@@ -12,9 +12,9 @@ type Props = {
   titre2: string,
 };
 
-const Header = ({ icon1, icon2, icon3, titre1, titre2 }: Props) => {
+const BlocHeader = ({ icon1, icon2, icon3, titre1, titre2 }: Props) => {
   return (
-    <div className='Header'>
+    <div className='BlocHeader'>
       <div className='col1'>
         <IconButton name={icon1.name} className={icon1.className} onClick={icon1.onClick ?? (() => {})} />
         
@@ -32,4 +32,4 @@ const Header = ({ icon1, icon2, icon3, titre1, titre2 }: Props) => {
   );
 };
 
-export default Header;
+export default BlocHeader;
