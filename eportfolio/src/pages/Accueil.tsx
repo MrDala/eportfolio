@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import { openLink } from "../tools/function";
+import { CV, Contact, Diplome, ExpPro, Footer, Header, Presentation, Projet } from "../components/Types";
 
 import VoletMenu from "../components/molecules/VoletMenu";
 import CardExpPro from "../components/molecules/CardExpPro";
@@ -19,24 +19,25 @@ import BlocContact from "../components/organisms/BlocContacts";
 import BlocFooter from "../components/organisms/BlocFooter";
 
 import i18n from "../tools/i18n";
-import { CV, Contact, Diplome, ExpPro, Footer, Header, Presentation, Projet } from "../components/Types";
 import SelectLangue from "../components/atoms/SelectLangue";
 import { Langues } from "../tools/langues";
+import { openLink } from "../tools/function";
 
 type Props = {
-  lang: Langues;
+  defaultLangue: Langues;
 };
 
-const Accueil = ({ lang }: Props) => {
+const Accueil = ({ defaultLangue }: Props) => {
   const [isVoletMenuOpen, setIsVoletMenuOpen] = useState(false);
-  const [langue, setLangue] = useState<Langues>(lang);
+  const [langue, setLangue] = useState<Langues>(defaultLangue);
   const { t } = useTranslation();
 
   const toggleVoletMenu = () => {
     setIsVoletMenuOpen(!isVoletMenuOpen);
   };
   
-  const changeLangue= (keyLangue: keyof typeof Langues) => {
+  /* Gestion de la langue */
+  const changeLangue = (keyLangue: keyof typeof Langues) => {
     setLangue(Langues[keyLangue]);
   }
 
@@ -76,6 +77,7 @@ const Accueil = ({ lang }: Props) => {
       <SelectLangue
         languesDispos={Object.keys(Langues)}
         onChange={changeLangue}
+        defaultLangue={defaultLangue}
       />
 
       <VoletMenu

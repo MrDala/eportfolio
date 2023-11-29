@@ -1,4 +1,5 @@
 import { RefObject } from "react";
+import { Langues } from "./langues";
 
 export function openLink(link : string) : void {
   if (link) {
@@ -61,4 +62,14 @@ export function downloadFile(src: string, nomFichier: string): void {
   link.target="_blank";
   link.rel="noreferrer";
   link.click();
+}
+
+
+export function defaultLangue(): Langues {
+  const getBrowserLangue = (): string => navigator.language.split('-')[1];
+
+  const navLang = getBrowserLangue();
+  const langueParDefaut = Object.keys(Langues).includes(navLang) ? Langues[navLang as keyof typeof Langues] : Langues.EN;
+
+  return langueParDefaut;
 }
