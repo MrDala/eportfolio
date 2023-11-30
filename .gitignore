@@ -4,3 +4,8 @@ eportfolio/src/traduction/fr-FR.json
 eportfolio/public/ressources/pdf/CV_LEON_Alexis.pdf
 eportfolio/public/ressources/logos/LyceeGeorgeSand.png
 eportfolio/public/ressources/logos/UniversiteParisCite.png
+App/public/ressources/logos/LyceeGeorgeSand.png
+App/public/ressources/logos/UniversiteParisCite.png
+App/src/traduction/fr-FR.json
+App/src/traduction/en-US.json
+App/public/ressources/pdf/CV_LEON_Alexis.pdf
