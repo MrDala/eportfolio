@@ -18,18 +18,13 @@ import BlocCV from "../components/organisms/BlocCV";
 import BlocContact from "../components/organisms/BlocContacts";
 import BlocFooter from "../components/organisms/BlocFooter";
 
-import i18n from "../tools/i18n";
+import i18n, { defaultLangue, langues } from "../tools/i18n";
 import SelectLangue from "../components/atoms/SelectLangue";
-import { Langues } from "../tools/langues";
 import { openLink } from "../tools/function";
 
-type Props = {
-  defaultLangue: Langues;
-};
-
-const Accueil = ({ defaultLangue }: Props) => {
+const Accueil = () => {
   const [isVoletMenuOpen, setIsVoletMenuOpen] = useState(false);
-  const [langue, setLangue] = useState<Langues>(defaultLangue);
+  const [langue, setLangue] = useState<string>(defaultLangue);
   const { t } = useTranslation();
 
   const toggleVoletMenu = () => {
@@ -37,8 +32,8 @@ const Accueil = ({ defaultLangue }: Props) => {
   };
   
   /* Gestion de la langue */
-  const changeLangue = (keyLangue: keyof typeof Langues) => {
-    setLangue(Langues[keyLangue]);
+  const changeLangue = (keyLangue: string) => {
+    setLangue(keyLangue);
   }
 
   useEffect(() => {
@@ -75,7 +70,7 @@ const Accueil = ({ defaultLangue }: Props) => {
   return (
     <>
       <SelectLangue
-        languesDispos={Object.keys(Langues)}
+        languesDispos={langues}
         onChange={changeLangue}
         defaultLangue={defaultLangue}
       />

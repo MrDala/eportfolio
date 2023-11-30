@@ -1,25 +1,43 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
-// Import language files
-import { Langues } from '../tools/langues';
+// Import dynamique des différents fichiers de traduction
 const translations = require.context('../traduction', false, /\.json$/);
+const keys: string [] = translations.keys();
+const regexToutesLettres: RegExp = /(?<=\.\/).+?(?=\.json)/;
 
-const resources: Record<Langues, any> = {} as Record<Langues, any>;
+// Définition de la liste de langues disponibles
+export const langues = Object.fromEntries(
+  keys
+    .reduce((acc, key) => {
+      const toutesLettres = key.match(regexToutesLettres)?.[0] ?? null;
 
-// Load each translation file dynamically
+      if (toutesLettres != null && toutesLettres) {
+        acc.push([toutesLettres, toutesLettres]);
+      }
+      return acc;
+    }, [] as [string, string][])
+    .sort(([a], [b]) => a.localeCompare(b))
+);
+
+export const defaultLangue = 
+  Object.keys(langues).includes(navigator.language) 
+  ? navigator.language 
+  : "fr-FR";
+
+// Lecture des fichiers de traduction chargés
+const resources: Record<string, any> = {};
 translations.keys().forEach(key => {
-  const langKey = key.replace('./', '').replace('.json', '') as Langues;
+  const langKey = key.replace('./', '').replace('.json', '');
   resources[langKey] = translations(key);
 });
 
-// Initialize i18n with necessary parameters
+// Initialisation des paramètres i18n
 i18n
   .use(initReactI18next)
   .init({
-    resources,
-    lng: Langues.FR,
-    fallbackLng: Langues.FR,
+    resources: resources,
+    fallbackLng: langues[navigator.language] || defaultLangue,
     debug: false,
     defaultNS: 'react',
     keySeparator: '.',

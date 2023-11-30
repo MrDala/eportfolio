@@ -1,7 +1,7 @@
 import '../../style/atoms/SelectLangue.css';
 
 type Props = {
-  languesDispos: string[],
+  languesDispos: Record<string, string>,
   defaultLangue: string,
   onChange: Function
 };
@@ -11,12 +11,12 @@ const SelectLangue = ({ languesDispos, onChange, defaultLangue }: Props) => {
     const nouvelleLangue = e.target.value;
     onChange(nouvelleLangue);
   };
-
+  
   return (
     <select onChange={handleLangueChange} defaultValue={defaultLangue}>
-      {(Array.isArray(languesDispos) ? languesDispos : []).map((langue, index) => (
-        <option key={index} value={langue}>
-          {langue}
+      {Object.entries(languesDispos).map((langue, index) => (
+        <option key={index} value={langue[0]}>
+          {langue[1]}
         </option>
       ))}
     </select>
