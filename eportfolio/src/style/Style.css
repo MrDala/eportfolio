@@ -66,7 +66,7 @@ a:active {
 
 /* Images */
 img{
-  object-fit: cover;
+  object-fit: contain;
 }
 
 /* Mobile */
@@ -110,6 +110,7 @@ img{
   img.xl {
     width: 250px;
     height: 125px;
+    object-fit:cover;
   }
 }
 
@@ -158,6 +159,7 @@ img{
   img.xl {
     width: 450px;
     height: 200px;
+    object-fit:cover;
   }
 }
 
@@ -206,6 +208,7 @@ img{
   img.xl {
     width: 550px;
     height: 225px;
+    object-fit:cover;
   }
 }
 
@@ -254,5 +257,6 @@ img{
   img.xl {
     width: 650px;
     height: 250px;
+    object-fit:cover;
   }
 }

@@ -7,7 +7,7 @@ const keys: string [] = translations.keys();
 const regexToutesLettres: RegExp = /(?<=\.\/).+?(?=\.json)/;
 
 // Définition de la liste de langues disponibles
-export const langues = Object.fromEntries(
+export const langues : Record<string, string> = Object.fromEntries(
   keys
     .reduce((acc, key) => {
       const toutesLettres = key.match(regexToutesLettres)?.[0] ?? null;
@@ -23,7 +23,7 @@ export const langues = Object.fromEntries(
 export const defaultLangue = 
   Object.keys(langues).includes(navigator.language) 
   ? navigator.language 
-  : "fr-FR";
+  : "ex-EX";
 
 // Lecture des fichiers de traduction chargés
 const resources: Record<string, any> = {};

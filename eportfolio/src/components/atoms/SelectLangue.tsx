@@ -11,15 +11,48 @@ const SelectLangue = ({ languesDispos, onChange, defaultLangue }: Props) => {
     const nouvelleLangue = e.target.value;
     onChange(nouvelleLangue);
   };
-  
-  return (
-    <select onChange={handleLangueChange} defaultValue={defaultLangue}>
-      {Object.entries(languesDispos).map((langue, index) => (
-        <option key={index} value={langue[0]}>
-          {langue[1]}
+
+  // Utilisez l'API Unicode pour obtenir les drapeaux
+  function getFlagEmoji(countryCode: string | null): string | void {
+    if (!countryCode) {
+      return;
+    }
+
+    const codePoints = countryCode
+      .toUpperCase()
+      .split('')
+      .map(char => 127397 + char.charCodeAt(0));
+
+    return String.fromCodePoint(...codePoints);
+  }
+
+  const regexLangue = /^(.*)-/ //Deux premières lettres
+  const regexPays = /-(.+)/  //Deux dernières lettres
+
+  function createOption(index: number, langueCode: string): JSX.Element | undefined {
+    const flag = getFlagEmoji(langueCode.match(regexPays)?.[1] ?? null);
+    const langue = langueCode.match(regexLangue)?.[1]?.toUpperCase() ?? null;
+
+    if (langue) {
+      return (
+        <option key={index} value={langueCode}>
+          {flag + " " + langue}
         </option>
-      ))}
-    </select>
+      );
+    } else {
+      return undefined;
+    }
+  }
+
+  return (
+    <div className='SelectLangue'>
+      <select onChange={handleLangueChange} defaultValue={defaultLangue} >
+        {Object.entries(languesDispos).map(([langueCode, langueName], index) => (
+          createOption(index, langueCode)
+        ))}
+      </select>
+    </div>
+
   );
 };
 

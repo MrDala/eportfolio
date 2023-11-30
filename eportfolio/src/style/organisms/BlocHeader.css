@@ -17,11 +17,34 @@
 /* Mobile */
 @media (min-width: 0px) and (max-width: 640px) {
   .BlocHeader {
-    margin: 0 50px 20px 50px;
+    flex-wrap: wrap;
+  }
+
+  .BlocHeader .col2{
+    order: 1;
+    width: 100%;
+    padding: 0 10%;
+  }
+
+  .BlocHeader .col1{
+    order: 2;
+  }
+  
+  .BlocHeader .col3{
+    order: 3;
+    gap: 10px;
+  }
+
+  .BlocHeader .col3 img{
+    width: 25px;
+    height: 25px;
   }
 
   .BlocHeader .col1, .BlocHeader .col3 {
-    display: none;
+    width: 50%;
+    margin-top: 10px;
+    padding: 0.5em 10%; /* Ajoutez le padding ici */
+    box-sizing: border-box;
   }
 }
 

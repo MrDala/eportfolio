@@ -28,10 +28,45 @@
   margin-left: auto;
 }
 
-
 /* Mobile */
 @media (min-width: 0px) and (max-width: 640px) {
+  .VoletMenu {
+    /* Masque le volet */
+    transform: translateY(105%);
+  
+    /* Position sur la page */
+    position: fixed;
+    bottom: 0;
+    height: 95vh;
+    width: 100vw;
+  
+    /* Style du volet */
+    border-radius: 10px;
+    box-sizing: border-box;
+  
+    /* Position des enfants */
+    padding: 0 10%;
+  }
 
+  .VoletMenu .categories{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .VoletMenu.open {
+    transform: translateY(5%);
+  }
+
+  .VoletMenu img {
+    padding: 20px 5px;
+  }
+
+  .VoletMenu .SelectLangue {
+    position: absolute;
+    bottom: 5%;
+    left: 10%;
+  }
 }
 
 /* Tablette */
@@ -39,12 +74,29 @@
   .VoletMenu {
     padding-left: 40px;
     padding-right: 40px;
+  }
+
+  .VoletMenu .categories {
+    display: flex;
+    flex-direction: column;
     gap: 15px;
   }
 
   .VoletMenu img {
     padding-top: 25px;
     padding-bottom: 40px;
+  }
+
+  .VoletMenu .SelectLangue {
+    position: absolute;
+    bottom: 5%;
+    left: 10%;
+  }
+
+  .VoletMenu .SelectLangue {
+    position: absolute;
+    bottom: 5%;
+    left: 10%;
   }
 }
 
@@ -53,12 +105,29 @@
   .VoletMenu {
     padding-left: 40px;
     padding-right: 40px;
+  }
+
+  .VoletMenu .categories {
+    display: flex;
+    flex-direction: column;
     gap: 15px;
   }
 
   .VoletMenu img {
     padding-top: 25px;
     padding-bottom: 40px;
+  }
+
+  .VoletMenu .SelectLangue {
+    position: absolute;
+    bottom: 5%;
+    left: 10%;
+  }
+
+  .VoletMenu .SelectLangue {
+    position: absolute;
+    bottom: 5%;
+    left: 10%;
   }
 }
 
@@ -67,11 +136,22 @@
   .VoletMenu {
     padding-left: 40px;
     padding-right: 40px;
+  }
+
+  .VoletMenu .categories {
+    display: flex;
+    flex-direction: column;
     gap: 15px;
   }
 
   .VoletMenu img {
     padding-top: 25px;
     padding-bottom: 40px;
+  }
+
+  .VoletMenu .SelectLangue {
+    position: absolute;
+    bottom: 5%;
+    left: 10%;
   }
 }

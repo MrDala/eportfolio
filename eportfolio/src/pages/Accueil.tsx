@@ -19,7 +19,6 @@ import BlocContact from "../components/organisms/BlocContacts";
 import BlocFooter from "../components/organisms/BlocFooter";
 
 import i18n, { defaultLangue, langues } from "../tools/i18n";
-import SelectLangue from "../components/atoms/SelectLangue";
 import { openLink } from "../tools/function";
 
 const Accueil = () => {
@@ -51,11 +50,11 @@ const Accueil = () => {
     },
     icon2: {
       name: 'cv',
-      onClick: () => openLink('./ressources/pdf/CV_LEON_Alexis.pdf')
+      onClick: () => openLink('./')
     },
     icon3: {
       name: 'linkedin',
-      onClick: () => openLink('https://www.linkedin.com/in/alexis-leon1/')
+      onClick: () => openLink('https://www.linkedin.com/')
     }
   } as Header;
 
@@ -69,16 +68,15 @@ const Accueil = () => {
 
   return (
     <>
-      <SelectLangue
-        languesDispos={langues}
-        onChange={changeLangue}
-        defaultLangue={defaultLangue}
-      />
-
       <VoletMenu
         toggleVoletMenu={toggleVoletMenu}
         isOpen={isVoletMenuOpen}
         titles={t("volet", { returnObjects: true })}
+        langues={{
+          languesDispos: langues,
+          onChange: changeLangue,
+          defaultLangue: defaultLangue,
+        }}
       />
 
       <>

@@ -17,7 +17,6 @@ const BlocHeader = ({ icon1, icon2, icon3, titre1, titre2 }: Props) => {
     <div className='BlocHeader'>
       <div className='col1'>
         <IconButton name={icon1.name} className={icon1.className} onClick={icon1.onClick ?? (() => {})} />
-        
       </div>
 
       <div className='col2'>

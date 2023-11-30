@@ -9,8 +9,8 @@
       "Contact"
     ],
     "header": {
-      "titre1": "AAAAAAAAAAAAAAAAAAAA",
-      "titre2": "Alexis&#160;LEON"
+      "titre1": "Exemple TITRE",
+      "titre2": "AUTEUR"
     },
     "presentation": {
       "img":"bg",
@@ -35,29 +35,20 @@
       ],
       "raw": [
         {
-          "nom": "Licence MIAGE - mention bien",
-          "date": "2023",
+          "nom": "Nom diplôme 1",
+          "date": "XXXX",
           "img": {
-            "src": "UniversiteParisCite",
-            "texte": "Université Paris Cité"
+            "src": "CSS3",
+            "texte": "Nom établissement"
           },
           "lien": "./"
         },
         {
-          "nom": "DUT informatique",
-          "date": "2022",
+          "nom": "Nom diplôme 2",
+          "date": "XXXX",
           "img": {
-            "src": "UniversiteParisCite",
-            "texte": "Université Paris Cité"
-          },
-          "lien": "./"
-        },
-        {
-          "nom": "Baccalauréat S - mention bien",
-          "date": "2022",
-          "img": {
-            "src": "LyceeGeorgeSand",
-            "texte": "Lycée George Sand"
+            "src": "CSS3",
+            "texte": "Nom établissement"
           },
           "lien": "./"
         }
@@ -84,8 +75,8 @@
     ],
     "cv": {
       "fichier": {
-        "nom": "CV_Alexis_LEON",
-        "src": "CV_LEON_Alexis"
+        "nom": "EXEMPLE_DE_CV",
+        "src": "./"
       },
       "bouton": {
         "telecharger": "Télécharger le CV",
@@ -95,22 +86,22 @@
     "contact": [
       {
         "icon": "mail",
-        "lien": "mailto:alexis.leon@etu.u-paris.fr",
-        "lienAffiche": "alexis.leon@etu.u-paris.fr"
+        "lien": "mailto:exemple.email@outlook.fr",
+        "lienAffiche": "exemple.email@outlook.fr"
       },
       {
         "icon": "linkedin",
-        "lien": "https://www.linkedin.com/in/alexis-leon1/",
-        "lienAffiche": "alexis-leon1"
+        "lien": "https://www.linkedin.com/",
+        "lienAffiche": "Linkedin"
       },
       {
         "icon": "discord",
-        "lien": "https://discord.com/users/219016239442427905",
-        "lienAffiche": "mrdala"
+        "lien": "https://discord.com/users/",
+        "lienAffiche": "Discord"
       }
     ],
     "footer": {
-      "texte":"2023 - Alexis LEON"
+      "texte":"XXXX - AUTHEUR"
     }
   }
 }
