@@ -54,7 +54,7 @@ const Accueil = () => {
     },
     icon3: {
       name: 'linkedin',
-      onClick: () => openLink('header.linkedin')
+      onClick: () => openLink(t('header.linkedin'))
     }
   } as Header;
 
