@@ -50,11 +50,11 @@ const Accueil = () => {
     },
     icon2: {
       name: 'cv',
-      onClick: () => openLink('./')
+      onClick: () => openLink(t('header.cv'))
     },
     icon3: {
       name: 'linkedin',
-      onClick: () => openLink('https://www.linkedin.com/')
+      onClick: () => openLink('header.linkedin')
     }
   } as Header;
 

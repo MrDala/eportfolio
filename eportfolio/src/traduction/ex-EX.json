@@ -10,7 +10,9 @@
     ],
     "header": {
       "titre1": "Exemple TITRE",
-      "titre2": "AUTEUR"
+      "titre2": "AUTEUR",
+      "cv": "./",
+      "linkedin": "./"
     },
     "presentation": {
       "img":"bg",

@@ -1,1 +1,6 @@
 .DS_Store
+eportfolio/src/traduction/en-US.json
+eportfolio/src/traduction/fr-FR.json
+eportfolio/public/ressources/pdf/CV_LEON_Alexis.pdf
+eportfolio/public/ressources/logos/LyceeGeorgeSand.png
+eportfolio/public/ressources/logos/UniversiteParisCite.png
