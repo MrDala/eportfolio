@@ -12,8 +12,10 @@ const CardProjet = ({ name, date, description, urlGit, urlProjet, logos }: Proje
         <h3>{name}</h3>
         <p className='date'>{date}</p>
         <p className='description'>{description}</p>
-        {urlGit && <Button text={urlGit.bouton} onClick={() => openLink(urlGit.url)} className='secondaire' />}
-        {urlProjet && <Button text={urlProjet.bouton} onClick={() => openLink(urlProjet.url)} className='plein'/>}
+        <div className="divButton">
+          {urlGit && <Button text={urlGit.bouton} onClick={() => openLink(urlGit.url)} className='secondaire' />}
+          {urlProjet && <Button text={urlProjet.bouton} onClick={() => openLink(urlProjet.url)} className='plein'/>}
+        </div>
       </div>
       <div className='col2'>
         {logos ? logos.map((logo, index) => (
