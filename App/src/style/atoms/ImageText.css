@@ -2,25 +2,33 @@
 .ImageText {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
 }
 
 /* Mobile */
 @media (min-width: 0px) and (max-width: 640px) {
-
+  .ImageText {
+    gap: 5px;
+  }
 }
 
 /* Tablette */
 @media (min-width: 641px) and (max-width: 1007px) {
-
+  .ImageText {
+    gap: 10px;
+  }
 }
 
 /* Petit écran PC */
 @media (min-width: 1008px) and (max-width: 1399px) {
-
+  .ImageText {
+    gap: 10px;
+  }
 }
 
 /* Écran PC */
 @media (min-width: 1400px) {
-
+  .ImageText {
+    gap: 10px;
+  }
 }

@@ -10,12 +10,20 @@
   .BlocTextImage {
     gap: 15px;
   }
+
+  .BlocTextImage .col1 {
+    width: 100%;
+  }
 }
 
 /* Tablette */
 @media (min-width: 641px) and (max-width: 1007px) {
   .BlocTextImage {
     gap: 20px;
+  }
+
+  .BlocTextImage .col1 {
+    width: 100%;
   }
 }
 
@@ -25,12 +33,28 @@
     flex-direction: row; 
     gap: 40px;
   }
+
+  .BlocTextImage .col1 {
+    width: 60%;
+  }
+
+  .BlocTextImage .col2 {
+    width: auto;
+  }
 }
 
 /* Écran PC */
 @media (min-width: 1400px) {
   .BlocTextImage {
     flex-direction: row; 
-    gap: 50px;
+    gap: 5%;
+  }
+
+  .BlocTextImage .col1 {
+    width: 55%;
+  }
+
+  .BlocTextImage .col2 {
+    width: auto;
   }
 }

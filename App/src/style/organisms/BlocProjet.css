@@ -30,7 +30,7 @@
 @media (min-width: 641px) and (max-width: 1007px) {
   .BlocProjet .CardProjet {
     width: calc(100% / 2);
-    padding: 2% 0 3% 0;
+    padding: 2% 2% 3% 2%;
   }
 
   .BlocProjet .CardProjet:nth-child(2n) {

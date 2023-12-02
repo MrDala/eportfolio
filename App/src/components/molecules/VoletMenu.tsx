@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 import '../../style/molecules/VoletMenu.css';
 import IconButton from '../atoms/IconButton';

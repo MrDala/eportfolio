@@ -1,0 +1,3 @@
+.RawDiplome td:nth-child(odd){
+  text-align: left;
+}

@@ -4,7 +4,7 @@ import parse from 'html-react-parser';
 import '../../style/molecules/CardExpPro.css';
 import VoletExpPro from './VoletExpPro';
 import { ExpPro } from '../Types';
-import { rootImages } from '../../tools/root';
+import { rootLogos } from '../../tools/root';
 
 const CardExpPro = ({ img, poste, entreprise, adresse, date, volet }: ExpPro) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +18,7 @@ const CardExpPro = ({ img, poste, entreprise, adresse, date, volet }: ExpPro) =>
     <>
       <div className='CardExpPro' onClick={toggleVolet}>
         <div className='col1'>
-          <img className='' src={rootImages + img + ".png"} alt={img} />
+          <img className='' src={rootLogos + img + ".png"} alt={img} />
         </div>
         <div className='col2'>
           <div className='top'>
