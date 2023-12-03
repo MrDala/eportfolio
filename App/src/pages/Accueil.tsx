@@ -22,10 +22,10 @@ import i18n, { defaultLangue, langues } from "../tools/i18n";
 import { getAge, openLink } from "../tools/function";
 
 const Accueil = () => {
+  const dateNaissance = process.env.REACT_APP_DATE_NAISSANCE ?? '1900-01-01';
   const [isVoletMenuOpen, setIsVoletMenuOpen] = useState(false);
   const [langue, setLangue] = useState<string>(defaultLangue);
   const { t } = useTranslation();
-  const dateNaissance = process.env.REACT_APP_DATE_NAISSANCE ?? '01.01.1900'
 
   const toggleVoletMenu = () => {
     setIsVoletMenuOpen(!isVoletMenuOpen);

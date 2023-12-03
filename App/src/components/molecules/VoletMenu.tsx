@@ -26,7 +26,15 @@ const VoletMenu = ({ isOpen, toggleVoletMenu, titles, langues }: Props) => {
 
   return (
     <div ref={divRef} className={"VoletMenu " + (isOpen ? 'open' : '')}>
-      <IconButton name='close' className='xs' onClick={toggleVoletMenu} />
+      <div className='top'>
+        <SelectLangue 
+          languesDispos={langues.languesDispos} 
+          defaultLangue={langues.defaultLangue} 
+          onChange={langues.onChange}      
+        />
+        <IconButton name='close' className='xs' onClick={toggleVoletMenu} />
+      </div>
+
 
       <div className='categories'>
         {Array.isArray(titles) && titles.map((title, index) => (
@@ -35,12 +43,6 @@ const VoletMenu = ({ isOpen, toggleVoletMenu, titles, langues }: Props) => {
           </h2>
         ))}
       </div>
-
-      <SelectLangue 
-        languesDispos={langues.languesDispos} 
-        defaultLangue={langues.defaultLangue} 
-        onChange={langues.onChange}      
-      />
     </div>
   );
 };
