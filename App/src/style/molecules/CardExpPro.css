@@ -12,12 +12,13 @@
   display: flex;
 }
 
-.CardExpPro:hover {
+.CardExpPro.cliquable:hover {
   cursor: pointer;
   border: solid 2px #4BA3C3;
+  border-collapse: collapse;
 }
 
-.CardExpPro:active {
+.CardExpPro.cliquable:active {
   transform: translateY(1px);
 }
 

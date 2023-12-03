@@ -14,7 +14,7 @@ export type Header = {
 };
 
 export type Presentation = {
-  img: string
+  img?: string
   texte: string
 };
 
@@ -29,7 +29,7 @@ export type Diplome = {
 };
 
 export type Projet = {
-  name: string,
+  nom: string,
   date: string,
   description: string,
   urlGit?: {

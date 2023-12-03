@@ -9,7 +9,7 @@ import CardProjet from "../components/molecules/CardProjet";
 import RawDiplome from "../components/molecules/RawDiplome";
 
 import BlocHeader from "../components/organisms/BlocHeader";
-import BlocTextImage from "../components/organisms/BlocTextImage";
+import BlocPresentation from "../components/organisms/BlocPresentation";
 import BlocExpPro from "../components/organisms/BlocExpPro";
 import BlocDiplomes from "../components/organisms/BlocTable";
 import BlocProjet from "../components/organisms/BlocProjet";
@@ -19,12 +19,13 @@ import BlocContact from "../components/organisms/BlocContacts";
 import BlocFooter from "../components/organisms/BlocFooter";
 
 import i18n, { defaultLangue, langues } from "../tools/i18n";
-import { openLink } from "../tools/function";
+import { getAge, openLink } from "../tools/function";
 
 const Accueil = () => {
   const [isVoletMenuOpen, setIsVoletMenuOpen] = useState(false);
   const [langue, setLangue] = useState<string>(defaultLangue);
   const { t } = useTranslation();
+  const dateNaissance = process.env.REACT_APP_DATE_NAISSANCE ?? '01.01.1900'
 
   const toggleVoletMenu = () => {
     setIsVoletMenuOpen(!isVoletMenuOpen);
@@ -58,7 +59,7 @@ const Accueil = () => {
     }
   } as Header;
 
-  const presentation = t("presentation", { returnObjects: true }) as Presentation;
+  const presentation = t("presentation",  { returnObjects: true, age: getAge(new Date(dateNaissance)) }) as Presentation;
   const expPros = t("expPro", { returnObjects: true }) as ExpPro[];
   const diplomes = t("diplome.raw", { returnObjects: true }) as Diplome[];
   const projets = t("projet", { returnObjects: true }) as Projet[];
@@ -85,7 +86,7 @@ const Accueil = () => {
         />
 
         <Bloc name={t("volet.0")}>
-          <BlocTextImage
+          <BlocPresentation
             {...presentation}
           />
         </Bloc>

@@ -62,3 +62,8 @@ export function downloadFile(src: string, nomFichier: string): void {
   link.rel="noreferrer";
   link.click();
 }
+
+export function getAge(dateNaissance : Date) {
+  const differenceInMillis = Date.now() - new Date(dateNaissance).getTime();
+  return new Date(differenceInMillis).getUTCFullYear() - 1970;
+}

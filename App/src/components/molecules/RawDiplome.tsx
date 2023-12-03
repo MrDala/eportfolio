@@ -1,6 +1,6 @@
 import '../../style/molecules/RawDiplome.css';
 import { openLink } from '../../tools/function';
-import { rootLogos } from '../../tools/root';
+import { rootEntreprises } from '../../tools/root';
 import { Diplome } from '../Types';
 import Button from '../atoms/Button';
 import ImageText from '../atoms/ImageText';
@@ -15,7 +15,7 @@ const RawDiplome = ({ nom, date, img, lien }: Diplome) => {
         <p className="big">{date}</p>
       </td>
       <td>
-        <ImageText className="xs" nameImage={rootLogos + img.src} text={img.texte} />
+        <ImageText className="xs" nameImage={rootEntreprises + img.src} text={img.texte} />
       </td>
       <td>
         <Button text="infos" className="xs" onClick={() => openLink(lien)} />

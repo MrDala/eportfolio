@@ -1,60 +1,69 @@
 /* Commun */
-.BlocTextImage {
+.BlocPresentation {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+}
+
+.BlocPresentation .col1 {
+  text-align: justify;
 }
 
 /* Mobile */
 @media (min-width: 0px) and (max-width: 640px) {
-  .BlocTextImage {
+  .BlocPresentation {
     gap: 15px;
   }
 
-  .BlocTextImage .col1 {
-    width: 100%;
+  .BlocPresentation .col1 {
+    margin: 0.5em 0;
+    width: 90%;
   }
 }
 
 /* Tablette */
 @media (min-width: 641px) and (max-width: 1007px) {
-  .BlocTextImage {
+  .BlocPresentation {
     gap: 20px;
   }
 
-  .BlocTextImage .col1 {
-    width: 100%;
+  .BlocPresentation .col1 {
+    margin: 0.5em 0;
+    width: 90%;
   }
 }
 
 /* Petit écran PC */
 @media (min-width: 1008px) and (max-width: 1399px) {
-  .BlocTextImage {
+  .BlocPresentation {
     flex-direction: row; 
     gap: 40px;
   }
 
-  .BlocTextImage .col1 {
+  .BlocPresentation .col1 {
+    margin: 0.5em 0;
     width: 60%;
   }
 
-  .BlocTextImage .col2 {
-    width: auto;
+  .BlocPresentation .col2 {
+    width: 40%;
   }
 }
 
 /* Écran PC */
 @media (min-width: 1400px) {
-  .BlocTextImage {
+  .BlocPresentation {
     flex-direction: row; 
     gap: 5%;
   }
 
-  .BlocTextImage .col1 {
+  .BlocPresentation .col1 {
+    margin: 1em 0;
     width: 55%;
   }
 
-  .BlocTextImage .col2 {
+  .BlocPresentation .col2 {
     width: auto;
   }
 }
