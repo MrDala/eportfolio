@@ -1,0 +1,75 @@
+/* Commun */
+.BlocTable {
+  display: flex;
+  justify-content: center;
+}
+
+.BlocTable table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.BlocTable table td {
+  text-align: center; 
+  vertical-align: middle;
+}
+
+.BlocTable table tbody tr {
+  border-top: 0.5px solid #000000;
+}
+
+/* Mobile */
+@media (min-width: 0px) and (max-width: 640px) {
+  .BlocTable table th {
+    padding-bottom: 5px;
+  }
+
+  .BlocTable table td {
+    padding: 2px 10px;
+  }
+}
+
+/* Tablette */
+@media (min-width: 641px) and (max-width: 1007px) {
+  .BlocTable table {
+    margin-top: 15px;
+  }
+
+  .BlocTable table th {
+    padding-bottom: 10px;
+  }
+
+  .BlocTable table td {
+    padding: 8px 10px;
+  }
+}
+
+/* Petit écran PC */
+@media (min-width: 1008px) and (max-width: 1399px) {
+  .BlocTable table {
+    margin-top: 15px;
+  }
+
+  .BlocTable table th {
+    padding-bottom: 10px;
+  }
+
+  .BlocTable table td {
+    padding: 10px;
+  }
+}
+
+/* Écran PC */
+@media (min-width: 1400px) {
+  .BlocTable table {
+    margin-top: 15px;
+  }
+
+  .BlocTable table th {
+    padding-bottom: 10px;
+  }
+
+  .BlocTable table td {
+    padding: 10px;
+  }
+}

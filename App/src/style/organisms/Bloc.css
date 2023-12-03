@@ -1,0 +1,56 @@
+/* Commun */
+.BlocExpPro {
+  margin: 30px 0;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Bloc.secondaire{
+  background-color: #FFF2F2;
+}
+
+/* Mobile */
+@media (min-width: 0px) and (max-width: 640px) {
+  .Bloc {
+    padding: 10px 10% 30px 10%;
+  }
+
+
+  .Bloc h2 {
+    margin-bottom: 15px;
+  }
+}
+
+/* Tablette */
+@media (min-width: 641px) and (max-width: 1007px) {
+  .Bloc {
+    padding: 20px 80px 40px 80px;
+  }
+
+  .Bloc h2 {
+    margin-bottom: 15px;
+  }
+}
+
+/* Petit écran PC */
+@media (min-width: 1008px) and (max-width: 1399px) {
+  .Bloc {
+    padding: 20px 80px 40px 80px;
+  }
+
+  .Bloc h2 {
+    margin-bottom: 15px;
+  }
+}
+
+/* Écran PC */
+@media (min-width: 1400px) {
+  .Bloc {
+    padding: 20px 10% 50px 10%;
+  }
+
+  .Bloc h2 {
+    margin-bottom: 15px;
+  }
+}

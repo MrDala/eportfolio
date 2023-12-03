@@ -1,1 +1,4 @@
 .DS_Store
+App/src/traduction/*
+App/public/ressources/logos/entreprises/*
+App/public/ressources/pdf/*

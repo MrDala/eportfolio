@@ -1,0 +1,91 @@
+/* Commun */
+.BlocCV {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.BlocCV div{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Mobile */
+@media (min-width: 0px) and (max-width: 640px) {
+  .BlocCV {
+    gap: 20px;
+  }
+  .BlocCV div{
+    gap: 10px;
+  }
+
+  .BlocCV .separator {
+    gap: 15px;
+  }
+
+  .BlocCV span {
+    min-height: 30px;
+    border: solid 0.5px #000;
+  }
+}
+
+/* Tablette */
+@media (min-width: 641px) and (max-width: 1007px) {
+  .BlocCV {
+    gap: 70px;
+  }
+
+  .BlocCV div{
+    gap: 20px;
+  }
+
+  .BlocCV .separator {
+    gap: 15px;
+  }
+
+  .BlocCV span {
+    min-height: 50px;
+    border: solid 0.5px #000;
+  }
+}
+
+/* Petit écran PC */
+@media (min-width: 1008px) and (max-width: 1399px) {
+  .BlocCV {
+    gap: 70px;
+  }
+
+  .BlocCV div{
+    gap: 30px;
+  }
+
+  .BlocCV .separator {
+    gap: 15px;
+  }
+
+  .BlocCV span {
+    min-height: 60px;
+    border: solid 0.5px #000;
+  }
+}
+
+/* Écran PC */
+@media (min-width: 1400px) {
+  .BlocCV {
+    gap: 70px;
+  }
+
+  .BlocCV div{
+    gap: 30px;
+  }
+
+  .BlocCV .separator {
+    gap: 15px;
+  }
+
+  .BlocCV span {
+    min-height: 70px;
+    border: solid 0.5px #000;
+  }
+}

@@ -1,0 +1,63 @@
+/* Commun toute taille*/
+.BlocProjet {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.BlocProjet .CardProjet {
+  box-sizing: border-box;
+  border-bottom: solid 0.5px #000;
+  border-right: solid 0.5px #000;
+}
+
+.BlocProjet .CardProjet.last-row {
+  border-bottom: none;
+}
+
+/* Mobile */
+@media (min-width: 0px) and (max-width: 640px) {
+  .BlocProjet .CardProjet {
+    width: 100%;
+    padding: 2% 0 4% 0;
+  }
+
+  .BlocProjet .CardProjet:nth-child(1n) {
+    border-right: none;
+  }
+}
+
+/* Tablette */
+@media (min-width: 641px) and (max-width: 1007px) {
+  .BlocProjet .CardProjet {
+    width: calc(100% / 2);
+    padding: 2% 2% 3% 2%;
+  }
+
+  .BlocProjet .CardProjet:nth-child(2n) {
+    border-right: none;
+  }
+}
+
+/* Petit écran PC */
+@media (min-width: 1008px) and (max-width: 1399px) {
+  .BlocProjet .CardProjet {
+    width: calc(100% / 3);
+    padding: 2% 2% 3% 2%;
+  }
+
+  .BlocProjet .CardProjet:nth-child(3n) {
+    border-right: none;
+  }
+}
+
+/* Écran PC */
+@media (min-width: 1400px) {
+  .BlocProjet .CardProjet {
+    width: calc(100% / 4);
+    padding: 2% 2% 3% 2%;
+  }
+
+  .BlocProjet .CardProjet:nth-child(4n) {
+    border-right: none;
+  }
+}

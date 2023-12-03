@@ -1,0 +1,69 @@
+/* Commun */
+.BlocPresentation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.BlocPresentation .col1 {
+  text-align: justify;
+}
+
+/* Mobile */
+@media (min-width: 0px) and (max-width: 640px) {
+  .BlocPresentation {
+    gap: 15px;
+  }
+
+  .BlocPresentation .col1 {
+    margin: 0.5em 0;
+    width: 90%;
+  }
+}
+
+/* Tablette */
+@media (min-width: 641px) and (max-width: 1007px) {
+  .BlocPresentation {
+    gap: 20px;
+  }
+
+  .BlocPresentation .col1 {
+    margin: 0.5em 0;
+    width: 90%;
+  }
+}
+
+/* Petit écran PC */
+@media (min-width: 1008px) and (max-width: 1399px) {
+  .BlocPresentation {
+    flex-direction: row; 
+    gap: 40px;
+  }
+
+  .BlocPresentation .col1 {
+    margin: 0.5em 0;
+    width: 60%;
+  }
+
+  .BlocPresentation .col2 {
+    width: 40%;
+  }
+}
+
+/* Écran PC */
+@media (min-width: 1400px) {
+  .BlocPresentation {
+    flex-direction: row; 
+    gap: 5%;
+  }
+
+  .BlocPresentation .col1 {
+    margin: 1em 0;
+    width: 55%;
+  }
+
+  .BlocPresentation .col2 {
+    width: auto;
+  }
+}

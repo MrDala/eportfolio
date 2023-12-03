@@ -1,0 +1,146 @@
+/* Commun */
+.CardProjet {
+  display: flex;
+  width: 100%;
+}
+
+.CardProjet p.date {
+  font-style: italic;
+}
+
+.CardProjet .col1 {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.CardProjet .col1 .divButton {
+  margin-top: auto;
+}
+
+.CardProjet .col2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Mobile */
+@media (min-width: 0px) and (max-width: 640px) {
+  /* Colonne 1 */
+  .CardProjet .col1 {
+    width: 85%;
+    padding: 0 8%;
+  }
+
+  .CardProjet p.date {
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
+
+  .CardProjet p.description {
+    margin-bottom: 15px;
+  }
+
+  .CardProjet .col1 .divButton {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Colonne 2 */
+  .CardProjet .col2 {
+    width: 15%;
+    gap: 5px;
+  }
+}
+
+/* Tablette */
+@media (min-width: 641px) and (max-width: 1007px) {
+  /* Colonne 1 */
+  .CardProjet .col1 {
+    padding: 0 8%;
+  }
+
+  /* Colonne 1 */
+  .CardProjet .col1 p.date {
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+
+  .CardProjet .col1 p.description {
+    margin-bottom: 10px;
+  }
+
+  .CardProjet .col1 .divButton {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Colonne 2 */
+  .CardProjet .col2 {
+    width: 15%;
+    gap: 5px;
+  }
+}
+
+/* Petit écran PC */
+@media (min-width: 1008px) and (max-width: 1399px) {
+
+  /* Colonne 1 */
+  .CardProjet .col1 {
+    padding: 0 8%;
+  }
+
+  .CardProjet .col1 p.date {
+    margin-top: 5px;
+    margin-bottom: 30px;
+  }
+
+  .CardProjet .col1 p.description {
+    margin-bottom: 30px;
+  }
+
+  .CardProjet .col1 .divButton {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  /* Colonne 2 */
+  .CardProjet .col2 {
+    width: 15%;
+    gap: 5px;
+  }
+}
+
+/* Écran PC */
+@media (min-width: 1400px) {
+
+  /* Colonne 1 */
+  .CardProjet .col1 {
+    padding: 0 8%;
+  }
+
+  .CardProjet .col1 p.date {
+    margin-top: 5px;
+    margin-bottom: 30px;
+  }
+
+  .CardProjet .col1 p.description {
+    margin-bottom: 30px;
+  }
+
+  .CardProjet .col1 .divButton {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  /* Colonne 2 */
+  .CardProjet .col2 {
+    width: 15%;
+    gap: 5px;
+  }
+}
