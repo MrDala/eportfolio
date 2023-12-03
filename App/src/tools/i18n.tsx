@@ -2,7 +2,7 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
 // Import dynamique des différents fichiers de traduction
-const langueParDefaut = process.env.REACT_APP_LANGUE_DEFAUT ?? "en-EN";
+const langueParDefaut = process.env.REACT_APP_LANGUE_DEFAUT ?? "en-US";
 const translations = require.context('../traduction', false, /\.json$/);
 const keys: string [] = translations.keys();
 const regexToutesLettres: RegExp = /(?<=\.\/).+?(?=\.json)/;
