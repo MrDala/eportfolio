@@ -20,6 +20,7 @@ import BlocFooter from "../components/organisms/BlocFooter";
 
 import i18n, { defaultLangue, langues } from "../tools/i18n";
 import { getAge, openLink } from "../tools/function";
+import { rootPdf } from '../tools/root';
 
 const Accueil = () => {
   const dateNaissance = process.env.REACT_APP_DATE_NAISSANCE ?? '1900-01-01';
@@ -51,7 +52,7 @@ const Accueil = () => {
     },
     icon2: {
       name: 'cv',
-      onClick: () => openLink(t('header.cv'))
+      onClick: () => openLink(rootPdf + t('cv.fichier.src') + ".pdf")
     },
     icon3: {
       name: 'linkedin',
@@ -72,7 +73,7 @@ const Accueil = () => {
       <VoletMenu
         toggleVoletMenu={toggleVoletMenu}
         isOpen={isVoletMenuOpen}
-        titles={t("volet", { returnObjects: true })}
+        titles={t("volet", { returnObjects: true }) as string[]}
         langues={{
           languesDispos: langues,
           onChange: changeLangue,
@@ -103,7 +104,7 @@ const Accueil = () => {
         </Bloc>
 
         <Bloc name={t("volet.2")}>
-          <BlocDiplomes heads={t("diplome.col", { returnObjects: true })}>
+          <BlocDiplomes heads={t("diplome.col", { returnObjects: true }) as string[]}>
             {(Array.isArray(diplomes) ? diplomes : []).map((diplome, index) => (
               <RawDiplome key={index} {...diplome} />
             ))}
