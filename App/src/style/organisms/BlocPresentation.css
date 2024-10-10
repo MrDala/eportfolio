@@ -10,15 +10,38 @@
   text-align: justify;
 }
 
+.BlocPresentation .col2 {
+  border-radius: 50%;
+  border: 0.1em solid #BA324F;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.BlocPresentation .col2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* Mobile */
 @media (min-width: 0px) and (max-width: 640px) {
   .BlocPresentation {
     gap: 15px;
+    flex-direction: row-reverse;
+    flex-direction: column;
   }
 
   .BlocPresentation .col1 {
     margin: 0.5em 0;
     width: 90%;
+    order: 2;
+  }
+
+  .BlocPresentation .col2 {
+    max-width: 175px;
+    order: 1;
   }
 }
 
@@ -26,11 +49,19 @@
 @media (min-width: 641px) and (max-width: 1007px) {
   .BlocPresentation {
     gap: 20px;
+    flex-direction: row-reverse;
+    flex-direction: column;
   }
 
   .BlocPresentation .col1 {
     margin: 0.5em 0;
     width: 90%;
+    order: 2;
+  }
+
+  .BlocPresentation .col2 {
+    max-width: 225px;
+    order: 1;
   }
 }
 
@@ -47,7 +78,7 @@
   }
 
   .BlocPresentation .col2 {
-    width: 40%;
+    max-width: 250px;
   }
 }
 
@@ -64,6 +95,6 @@
   }
 
   .BlocPresentation .col2 {
-    width: auto;
+    max-width: 275px;
   }
 }

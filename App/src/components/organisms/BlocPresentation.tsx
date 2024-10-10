@@ -14,7 +14,7 @@ const BlocPresentation = ({ texte, img }: Presentation) => {
       </div>
       {img ?
         <div className='col2'>
-          <img className='xl' src={rootImages + img + ".png"} alt={img} />
+          <img src={rootImages + img + ".png"} alt={img} />
         </div>
         : null
       }
