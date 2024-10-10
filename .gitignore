@@ -1,8 +1,8 @@
 .DS_Store
 App/src/traduction/*
-App/public/ressources/logos/entreprises/*
+App/public/ressources/logos/*
+App/public/ressources/images/*
 App/public/ressources/pdf/*
 App/.firebase/hosting.YnVpbGQ.cache
 App/.firebaserc
 App/firebase.json
-App/public/ressources/images/bg.png
