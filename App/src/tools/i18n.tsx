@@ -7,6 +7,16 @@ const translations = require.context('../traduction', false, /\.json$/);
 const keys: string [] = translations.keys();
 const regexToutesLettres: RegExp = /(?<=\.\/).+?(?=\.json)/;
 
+let langueNavigateur = navigator.language;
+switch (langueNavigateur) {
+  case 'fr':
+    langueNavigateur = 'fr-FR';
+    break;
+  case 'en':
+    langueNavigateur = 'en-US';
+    break;
+}
+
 // Définition de la liste de langues disponibles
 export const langues : Record<string, string> = Object.fromEntries(
   keys
@@ -22,8 +32,8 @@ export const langues : Record<string, string> = Object.fromEntries(
 );
 
 export const defaultLangue = 
-  Object.keys(langues).includes(navigator.language) 
-  ? navigator.language 
+  Object.keys(langues).includes(langueNavigateur) 
+  ? langueNavigateur 
   : langueParDefaut;
 
 // Lecture des fichiers de traduction chargés
@@ -38,7 +48,7 @@ i18n
   .use(initReactI18next)
   .init({
     resources: resources,
-    fallbackLng: langues[navigator.language] || defaultLangue,
+    fallbackLng: langueNavigateur,
     debug: false,
     defaultNS: 'react',
     keySeparator: '.',
